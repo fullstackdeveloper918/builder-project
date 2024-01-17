@@ -24,7 +24,7 @@ function Counter({ initialCount = 99 }: CounterProps) {
       </button>
       <span className={styles.count}>{count}</span>
       <button className={styles.btn} onClick={increment}>
-        plus
+        +
       </button>
     </div>
   );
