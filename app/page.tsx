@@ -4,20 +4,14 @@ import Card from "./../components/Card";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    const users = fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((res) => setUsers(res));
-  }, []);
-  console.log(users, "usersusers");
   return (
     <main>
+      <Card />
       <section className="min-h-[100vh] w-[100%]">
         {/* <section>hellokjmh</section> */}
-        {/* <DashBoard /> */}
+        <DashBoard />
         <div className="flex items-center justify-between">
-          {users
+          {/* {users
             ?.map((user: any) => {
               return (
                 <>
@@ -29,7 +23,7 @@ export default function Home() {
                 </>
               );
             })
-            .slice(0, 5)}
+            .slice(0, 5)} */}
         </div>
       </section>
     </main>
