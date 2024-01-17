@@ -17,7 +17,6 @@ const Card = () => {
           ?.map((user) => {
             return (
               <>
-                {/* <div className="flex w-[100%] h-[100vh] "> */}
                 <div class="max-w-[350px] bg-white">
                   <div className="w-[80%] bg-[#fff] border border-solid border-[#ccc] rounded-[30px] shadow border-gray-200">
                     <Image
@@ -36,7 +35,6 @@ const Card = () => {
                     </p>
                   </div>
                 </div>
-                {/* </div> */}
               </>
             );
           })
