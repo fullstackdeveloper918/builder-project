@@ -2,7 +2,7 @@ import images from "@/constants/images";
 import Image from "next/image";
 import React from "react";
 
-const Card = () => {
+const Card = ({ desc, price }) => {
   return (
     <>
       <div className="w-[100%] h-[100vh] flex justify-center items-center">
@@ -12,10 +12,11 @@ const Card = () => {
           </div>
           <div className="flex flex-col w-[70%] text-wrap">
             <span class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
-              Tentree® Long Sleeve Classic Henley - Men&apos;s 😀😀😀🐝♻💚🐟
+              {/* Tentree® Long Sleeve Classic Henley - Men&apos;s 😀😀😀🐝♻💚🐟 */}
+              {desc}
             </span>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              as low as $44.67
+              as low as $ {price}
             </p>
           </div>
         </div>
