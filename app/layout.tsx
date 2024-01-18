@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../redux-setup/Providers";
 import { store } from "@/redux-setup/store";
-import SideBar from "./../components/SideBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,11 +18,8 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body className={inter.className}>
-          {/* <section className="flex justify-between"> */}
-          {/* <SideBar /> */}
+        <body className={inter.className}> 
           {children}
-          {/* </section> */}
         </body>
       </html>
     </Providers>

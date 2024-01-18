@@ -7,11 +7,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   return (
     <main>
-      <section className="min-h-[100vh] w-[100%]">
-        {/* <section>hellokjmh</section> */}
-        {/* <DashBoard /> */}
-        <Card />
-      </section>
+      
     </main>
   );
 }
