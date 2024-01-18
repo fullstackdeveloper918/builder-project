@@ -12,7 +12,6 @@
     "@builder.io/dev-tools": "^0.2.8",
     "@builder.io/react": "^3.1.1",
     "@builder.io/sdk": "^2.1.1",
-    "@builder.io/widgets": "^1.2.24",
     "@reduxjs/toolkit": "^2.0.1",
     "formik": "^2.4.5",
     "next": "14.0.4",

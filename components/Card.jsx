@@ -22,8 +22,6 @@ const responsive = {
   },
 };
 
-const arr = [1111, 2222222, 33333333, 4444444, 555555, 666666, 7777777];
-
 const Card = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -79,7 +77,3 @@ const Card = () => {
 };
 
 export default Card;
-
-// {arr.map((a, i) => {
-//     return <h2 key={i}>{a}</h2>;
-//   })}
