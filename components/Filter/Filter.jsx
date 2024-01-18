@@ -29,6 +29,7 @@ const Filter = () => {
         </div>
         <div className="filter_select">
           <select name="" id="">
+      {/* //just to commit */}
             <option value="">Select an option</option>
           </select>
         </div>
@@ -37,7 +38,6 @@ const Filter = () => {
 
       {activeFilter && <FilterPanel />}
       </div>
-      
 
     
     </>
