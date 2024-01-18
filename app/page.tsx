@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AdditionalServicesCard from "./../components/AdditionalServicesCard/AdditionalServicesCard";
 import PrimaryHeader from "./../components/primary-header/PrimaryHeader";
 import SecondaryHeader from "./../components/secondary-header/SecondaryHeader";
+import Footer from "./../components/footer/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,10 @@ export default function Home() {
       <div className="">
         <PrimaryHeader />
         <SecondaryHeader />
+      </div>
+      <div className="h-[300px] flex justify-center">just space btw</div>
+      <div className="">
+        <Footer />
       </div>
       {/* <div>
         <AdditionalServicesCard />
