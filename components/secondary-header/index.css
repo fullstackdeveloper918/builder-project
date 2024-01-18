@@ -1,7 +1,8 @@
-.container {
+.container11 {
   display: flex;
   justify-content: space-between;
-  margin: 0 20px;
+  /* margin: 0 20px; */
+  width: 100%;
   /* color: #000;
   font-family: "DM Sans";
   font-size: 14px;
@@ -9,6 +10,7 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.14px; */
+  background-color: #fff;
 }
 
 @media (max-width: 425px) {
