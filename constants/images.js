@@ -6,6 +6,12 @@ import Filter_btn_icon from '../assets/Filter_btn_icon.svg'
 import Select_icon from '../assets/select_icon.svg'
 import Shirt from '../assets/Rectangle 94.svg'
 import Filter_section_icon from '../assets/Filter_section_icon.svg'
+import Cup1 from '../assets/cup 1.svg'
+import Cup2 from '../assets/cup 2.svg'
+import different_colors from '../assets/different_colors.svg'
+import cart_image from '../assets/cart_product_image.svg'
+import delete_icon from '../assets/delete_icon.svg'
+
 
 const images = {
     ethical_swag,
@@ -15,7 +21,13 @@ const images = {
     Filter_btn_icon,
     Select_icon,
     Shirt,
-    Filter_section_icon
+    Filter_section_icon,
+    Cup1,
+    Cup2,
+    different_colors,
+    cart_image,
+    delete_icon
+
 }
 
 export default images

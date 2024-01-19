@@ -1,0 +1,165 @@
+.collection_wrapper {
+  width: 100%;
+  height: 50px;
+  margin-top: 2.5rem;
+}
+
+.collection_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 557px;
+  gap: 1.5rem;
+}
+
+.collection_container > div {
+  border: 1px solid #d4d4d4;
+  border-radius: 30px;
+}
+
+.collection_Single {
+  width: 100%;
+  cursor: pointer;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.collection_items {
+  transition: all 0.1s ease-out;
+}
+
+.collection_items:hover {
+  cursor: pointer;
+  border-radius: 21.938px;
+  border: 2.194px solid var(--green, #a2d061);
+  background: #fff;
+  box-shadow: 0px 3.344px 20.066px 0px rgba(0, 0, 0, 0.06);
+}
+
+.collection_Single {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.collection_Single > .imgContent {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+.imgContent > .img {
+  position: absolute;
+  bottom: 17%;
+}
+
+.imgContent > .img:nth-child(2) {
+  right: -9%;
+  bottom: 21%;
+  z-index: -1;
+}
+
+.collection_Single > .textContent {
+  flex: 1;
+  width: 50%;
+}
+
+.textContent_title {
+  color: #111;
+  font-family: "DM Sans";
+  font-size: 28.943px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40.075px; /* 138.462% */
+}
+
+.collection_items {
+  position: relative;
+  padding: 1.2rem;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.collection_items > img {
+  height: 70%;
+  width: 100%;
+}
+
+.product_content {
+  width: 100%;
+  text-align: center;
+}
+
+.product_content > .title {
+  width: 80%;
+  margin: 0 auto 0.7rem;
+  color: #111;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 29.238px;
+}
+
+.product_content > .small_text {
+  width: 40%;
+  margin: 0 auto;
+  color: #111;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+
+.product_content > .colors {
+  margin-top: 1rem;
+}
+
+.hidden_icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.hidden_icons > .btn {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 17.55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.176px;
+  width: 162px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 142.594px;
+  border: 1px solid #a2d061;
+  background: #a2d061;
+  transform: scale(0);
+  opacity: 0;
+  transition: opacity 0.6s ease, scale 1s ease;
+}
+
+.collection_items:hover .hidden_icons {
+  display: flex;
+}
+.collection_items:hover .hidden_icons > .btn {
+  opacity: 1;
+  transform: scale(1);
+}
