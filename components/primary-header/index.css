@@ -1,14 +1,14 @@
-.main_container {
+.top-bar {
   background-color: #a2d061;
 }
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
   color: #fff;
   height: 50px;
   width: 100%;
+  max-width: 1368px;
   margin: 0 auto;
   font-family: "DM Sans";
   font-size: 14px;

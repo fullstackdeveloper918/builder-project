@@ -7,7 +7,7 @@ import searchImg from "../../assets/headerPics/Search.svg";
 import { type } from "./../../redux-setup/store";
 const PrimaryHeader = () => {
   return (
-    <div className="main_container">
+    <div className="main_container top-bar">
       <div className="container">
         <div className="container_left">
           <div className="offer_container">

@@ -10,7 +10,7 @@ import Image from "next/image";
 const SecondaryHeader = () => {
   return (
     <div className="main_container">
-      <div className="container11">
+      <div className="container">
         <div className="container_1">
           <div className="">
             <Image src={logo} width={220} height={50} alt="search" />

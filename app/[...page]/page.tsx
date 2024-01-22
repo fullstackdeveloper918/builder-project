@@ -1,7 +1,7 @@
+"use client";
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../../components/builder";
-// import "@builder.io/widgets";
-// import "@builder.io/widgets/dist/lib/builder-widgets-async";
+import "@builder.io/widgets/dist/lib/builder-widgets-async";
 // Builder Public API Key set in .env file
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 
