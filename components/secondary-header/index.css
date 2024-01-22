@@ -1,26 +1,8 @@
 .container11 {
   display: flex;
   justify-content: space-between;
-  /* margin: 0 20px; */
   width: 100%;
-  /* color: #000;
-  font-family: "DM Sans";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.14px; */
   background-color: #fff;
-}
-
-@media (max-width: 425px) {
-  .container {
-    /* display: flex;
-    flex-direction: column;
-    padding: 20px;
-    justify-content: space-between; */
-    /* margin: 0; */
-  }
 }
 
 .container_2 {
@@ -36,13 +18,6 @@
   letter-spacing: 0.14px;
 }
 
-/* @media (max-width: 425px) {
-  .container_2 {
-    justify-content: space-between;
-    width: 100%;
-  }
-} */
-
 .text_with_down_icon {
   display: flex;
   gap: 5px;
@@ -54,10 +29,3 @@
   gap: 20px;
   align-items: center;
 }
-
-/* @media (max-width: 425px) {
-  .container_3 {
-    justify-content: space-between;
-    width: 100%;
-  }
-} */
