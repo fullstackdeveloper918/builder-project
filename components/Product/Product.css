@@ -1,0 +1,131 @@
+.detail_page_wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 30px;
+}
+
+.detail_page_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  height: 100%;
+  border-top: 1px solid rgba(217, 217, 217, 0.5);
+}
+
+.detail_page_left_top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail_page_image_content {
+  width: 100%;
+  background: rgba(162, 208, 97, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail_page_left_top .images_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.images_container .img {
+  width: 124px;
+  height: 112px;
+  background: rgba(162, 208, 97, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right Section */
+.detail_page_right_section {
+  padding: 3rem 0 4.8rem;
+}
+
+.detail_page_right_section .tag {
+  width: 149px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid var(--green, #a2d061);
+  background: rgba(162, 208, 97, 0.15);
+}
+
+.detail_page_right_section .tag p {
+  color: rgba(17, 17, 17, 0.7);
+  font-family: "DM Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: 0.12px;
+  text-transform: capitalize;
+}
+
+.detail_page_right_section .title {
+  margin-top: 1.2rem;
+  width: 572px;
+  color: #111;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.detail_page_right_section .reviews {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.text_review .text_review_content {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+}
+
+.detail_page_right_section .text_content {
+  width: 613px;
+  height: 106px;
+  margin-top: 1.5rem;
+  flex-shrink: 0;
+}
+
+.text_content p {
+  color: #22202f;
+  /* font-family: "DM Sans"; */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.text_content .read_more {
+  color: #a2d061;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
