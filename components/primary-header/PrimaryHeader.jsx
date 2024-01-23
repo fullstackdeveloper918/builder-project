@@ -8,8 +8,10 @@ import searchImg from "../../assets/headerPics/Search.svg";
 import { type } from "./../../redux-setup/store";
 import loginIcon from "../../assets/login-icon.svg";
 import signIcon from "../../assets/headerPics/Sign-up.svg";
-
+import { usePathname, useRouter } from "next/navigation";
 const PrimaryHeader = () => {
+  const router = useRouter();
+  const pathname = usePathname();
   const [screenSize, setScreenSize] = useState(992);
   const handleResize = () => {
     setScreenSize(window.innerWidth);
@@ -47,7 +49,10 @@ const PrimaryHeader = () => {
 
             <input type="text" placeholder="Search for product..." />
           </div>
-          <div className="login-signup">
+          <div
+            className="login-signup"
+            onClick={() => router.push("/login")}
+          >
             {screenSize > 991 && "Login"}
             {screenSize <= 991 && (
               <span>
@@ -56,7 +61,10 @@ const PrimaryHeader = () => {
             )}
           </div>
 
-          <div className="login-signup">
+          <div
+            className="login-signup "
+            onClick={() => router.push("/register")}
+          >
             {screenSize > 991 && "SignUp"}
             {screenSize <= 991 && (
               <span>
