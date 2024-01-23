@@ -12,8 +12,8 @@ const Product = () => {
             <div className="detail_page_image_content">
               <Image
                 src={images.shirt_small}
-                width={479}
-                height={629}
+                width={400}
+                height={560}
                 alt="Single_Product_Image"
               />
             </div>
@@ -115,6 +115,14 @@ const Product = () => {
             <div className="input-checkbox">
               <input type="checkbox" name="" id="" />
               <span>Is this a sample ?</span>
+            </div>
+            <div className="customization_text">
+              <p>Select Customization</p>
+              <div className="buttons">
+                <button className="btn">Embroidery</button>
+                <button className="btn">Full Color Decoration</button>
+                <button className="btn">No Decoration</button>
+              </div>
             </div>
           </div>
         </div>
