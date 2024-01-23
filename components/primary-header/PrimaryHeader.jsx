@@ -10,7 +10,7 @@ import loginIcon from "../../assets/login-icon.svg";
 import signIcon from "../../assets/headerPics/Sign-up.svg";
 
 const PrimaryHeader = () => {
-  const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const [screenSize, setScreenSize] = useState(992);
   const handleResize = () => {
     setScreenSize(window.innerWidth);
   };

@@ -18,9 +18,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import { usePathname, useRouter } from "next/navigation";
 const SecondaryHeader = () => {
   const [position, setPosition] = React.useState("bottom");
+  const router = useRouter();
+  const pathname = usePathname();
+
   return (
     <div className="main_container">
       <div className="container">
@@ -33,7 +36,12 @@ const SecondaryHeader = () => {
           <div className="text_with_down_icon">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">Shop</Button>
+                <Button variant="ghost">
+                  Shop
+                  <span>
+                    <Image src={downIcon} width={8} height={8} alt="search" />
+                  </span>
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
@@ -52,16 +60,17 @@ const SecondaryHeader = () => {
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            <div className="">
-              <Image src={downIcon} width={8} height={8} alt="search" />
-            </div>
           </div>
 
           <div className="text_with_down_icon">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">About</Button>
+                <Button variant="ghost">
+                  About
+                  <span>
+                    <Image src={downIcon} width={8} height={8} alt="search" />
+                  </span>
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
@@ -80,13 +89,10 @@ const SecondaryHeader = () => {
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-            <div className="">
-              <Image src={downIcon} width={8} height={8} alt="search" />
-            </div>
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline">Contact</Button>
+              <Button variant="ghost">Contact</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
               <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
@@ -116,7 +122,7 @@ const SecondaryHeader = () => {
           <div className="">
             <Image src={heartImg} width={29} height={29} alt="like" />
           </div>
-          <div className="">
+          <div className="" onClick={() => router.push("/cart")}>
             <Image src={cartImg} width={27} height={27} alt="cart" />
           </div>
         </div>
