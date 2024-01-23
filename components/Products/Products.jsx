@@ -10,9 +10,10 @@ import useFetch from "./../../utils/useFetch";
 const Products = () => {
   const router = useRouter();
 
-  const [loadQuery, { response, loading }] = useFetch(`/users`, {
+  const [loadQuery, { response, loading }] = useFetch(`/collection`, {
     method: "get",
   });
+  // https://test.cybersify.tech/Eswag/public/api/collection
 
   useEffect(() => {
     loadQuery();

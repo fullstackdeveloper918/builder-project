@@ -9,10 +9,23 @@ import { type } from "./../../redux-setup/store";
 import loginIcon from "../../assets/login-icon.svg";
 import signIcon from "../../assets/headerPics/Sign-up.svg";
 import { usePathname, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 const PrimaryHeader = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [screenSize, setScreenSize] = useState(992);
+  const [position, setPosition] = React.useState("bottom");
+
   const handleResize = () => {
     setScreenSize(window.innerWidth);
   };
@@ -35,10 +48,37 @@ const PrimaryHeader = () => {
             <div className="">1-877-256-6998</div>
           </div>
           <div className="offer_container">
-            <div className="">What we Offer</div>
-            <div className="">
-              <Image src={downArrowImg} alt="down arrow" width={9} height={9} />
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost">
+                  What we Offer
+                  <span>
+                    <Image
+                      src={downArrowImg}
+                      alt="down arrow"
+                      width={9}
+                      height={9}
+                    />
+                  </span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup
+                  value={position}
+                  onValueChange={setPosition}
+                >
+                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="bottom">
+                    Bottom
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="right">
+                    Right
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
         <div className="container_right">
