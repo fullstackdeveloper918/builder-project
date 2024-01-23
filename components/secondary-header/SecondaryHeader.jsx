@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import cartImg from "../../assets/headerPics/cart.svg";
 import searchImg from "../../assets/headerPics/Search-black.svg";
@@ -19,8 +19,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { usePathname, useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+
 const SecondaryHeader = () => {
   const [position, setPosition] = React.useState("bottom");
+  const [showSearchInput, setShowSearchInput] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -90,27 +93,59 @@ const SecondaryHeader = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-
-          <div>Contact</div>
+          <Button variant="ghost">Contact</Button>
         </div>
         <div className="container_3">
           <div className="">
-            <Image
-              src={flag}
-              width={67}
-              height={35}
-              alt="like"
-              className="cursor-pointer"
-            />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost">
+                  <Image src={flag} width={67} height={35} alt="like" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup
+                  value={position}
+                  onValueChange={setPosition}
+                >
+                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="bottom">
+                    Bottom
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="right">
+                    Right
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <div className="">
-            <Image
-              src={searchImg}
-              width={24}
-              height={24}
-              alt="search"
-              className="cursor-pointer"
-            />
+            {showSearchInput ? (
+              <span>
+                <Input />
+                <Image
+                  src={searchImg}
+                  width={24}
+                  height={24}
+                  alt="search"
+                  onClick={() => {
+                    setShowSearchInput(!showSearchInput);
+                  }}
+                />
+              </span>
+            ) : (
+              <Image
+                src={searchImg}
+                width={24}
+                height={24}
+                alt="search"
+                onClick={() => {
+                  setShowSearchInput(!showSearchInput);
+                }}
+              />
+            )}
           </div>
           <div className="">
             <Image

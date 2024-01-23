@@ -11,7 +11,7 @@ const useFetch = (url, config, formdata) => {
     // const navigate = useNavigate();
     const instance = axios.create({
         // baseURL: process.env.REACT_APP_BASE_URL,
-        baseURL: 'https://jsonplaceholder.typicode.com',
+        baseURL: 'https://test.cybersify.tech/Eswag/public/api',
     });
     const loadQuery = async (data, rest) => {
         const token = localStorage.getItem("RENath_token");

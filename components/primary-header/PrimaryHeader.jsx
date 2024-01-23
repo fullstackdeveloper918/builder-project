@@ -19,12 +19,25 @@ import {
 import loginIcon from "../../assets/login-icon.svg";
 import signIcon from "../../assets/headerPics/Sign-up.svg";
 import { usePathname, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 const PrimaryHeader = () => {
   const [position, setPosition] = React.useState("bottom");
 
   const router = useRouter();
   const pathname = usePathname();
   const [screenSize, setScreenSize] = useState(992);
+  const [position, setPosition] = React.useState("bottom");
+
   const handleResize = () => {
     setScreenSize(window.innerWidth);
   };
@@ -54,9 +67,9 @@ const PrimaryHeader = () => {
                   <span>
                     <Image
                       src={downArrowImg}
-                      width={8}
-                      height={8}
-                      alt="search"
+                      alt="down arrow"
+                      width={9}
+                      height={9}
                     />
                   </span>
                 </Button>
@@ -68,9 +81,7 @@ const PrimaryHeader = () => {
                   value={position}
                   onValueChange={setPosition}
                 >
-                  <DropdownMenuRadioItem value="top">
-                    What we Offer
-                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
                   <DropdownMenuRadioItem value="bottom">
                     Bottom
                   </DropdownMenuRadioItem>
@@ -80,8 +91,6 @@ const PrimaryHeader = () => {
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            <div className=""></div>
           </div>
         </div>
         <div className="container_right">

@@ -11,9 +11,10 @@ const Products = () => {
   // const route = useRouter();
   // console.log(route);
 
-  const [data, setData] = useState([]);
-
-  // const { data, loading, error } = useFetch(API_URL);
+  const [loadQuery, { response, loading }] = useFetch(`/collection`, {
+    method: "get",
+  });
+  // https://test.cybersify.tech/Eswag/public/api/collection
 
   useEffect(() => {
     // const fetchData = async () => {
