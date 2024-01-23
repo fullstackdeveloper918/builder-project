@@ -9,10 +9,23 @@ import { type } from "./../../redux-setup/store";
 import loginIcon from "../../assets/login-icon.svg";
 import signIcon from "../../assets/headerPics/Sign-up.svg";
 import { usePathname, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 const PrimaryHeader = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [screenSize, setScreenSize] = useState(992);
+  const [position, setPosition] = React.useState("bottom");
+
   const handleResize = () => {
     setScreenSize(window.innerWidth);
   };
@@ -23,8 +36,6 @@ const PrimaryHeader = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  console.log(screenSize, "window.innerWidth");
 
   return (
     <div className="main_container top-bar">
@@ -37,10 +48,37 @@ const PrimaryHeader = () => {
             <div className="">1-877-256-6998</div>
           </div>
           <div className="offer_container">
-            <div className="">What we Offer</div>
-            <div className="">
-              <Image src={downArrowImg} alt="down arrow" width={9} height={9} />
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost">
+                  What we Offer
+                  <span>
+                    <Image
+                      src={downArrowImg}
+                      alt="down arrow"
+                      width={9}
+                      height={9}
+                    />
+                  </span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup
+                  value={position}
+                  onValueChange={setPosition}
+                >
+                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="bottom">
+                    Bottom
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="right">
+                    Right
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
         <div className="container_right">
@@ -49,26 +87,27 @@ const PrimaryHeader = () => {
 
             <input type="text" placeholder="Search for product..." />
           </div>
-          <div
-            className="login-signup"
-            onClick={() => router.push("/login")}
-          >
-            {screenSize > 991 && "Login"}
+          <div className="login-signup" onClick={() => router.push("/login")}>
+            {screenSize > 991 && <button>Login</button>}
             {screenSize <= 991 && (
               <span>
-                <Image src={loginIcon} alt="login" width={13} height={13} />
+                <button>
+                  <Image src={loginIcon} alt="login" width={13} height={13} />
+                </button>
               </span>
             )}
           </div>
 
           <div
-            className="login-signup "
+            className="cursor-pointer"
             onClick={() => router.push("/register")}
           >
-            {screenSize > 991 && "SignUp"}
+            {screenSize > 991 && <button>SignUp</button>}
             {screenSize <= 991 && (
               <span>
-                <Image src={signIcon} alt="login" width={18} height={18} />
+                <button>
+                  <Image src={signIcon} alt="Register" width={18} height={18} />
+                </button>
               </span>
             )}
           </div>

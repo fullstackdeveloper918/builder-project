@@ -6,6 +6,7 @@ import AdditionalServicesCard from "./../components/AdditionalServicesCard/Addit
 import PrimaryHeader from "./../components/primary-header/PrimaryHeader";
 import SecondaryHeader from "./../components/secondary-header/SecondaryHeader";
 import Footer from "./../components/footer/Footer";
+import Pagination from "@/components/Pagination/Pagination";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <SecondaryHeader />
       </div>
       <div className="h-[300px] flex justify-center">just space btw</div>
+      <div className="">{/* <Pagination /> */}</div>
       <div className="">
         <Footer />
       </div>
