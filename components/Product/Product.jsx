@@ -128,6 +128,78 @@ const Product = () => {
               <p>
                 How many areas of the product would you like to add a logo to?
               </p>
+              <input type="text" className="input" placeholder="3" />
+            </div>
+            <div className="para_text">
+              <p>Select location from the dropdown below</p>
+              <div className="inputs">
+                <div className>
+                  <input
+                    type="radio"
+                    id="html"
+                    name="fav_language"
+                    value="HTML"
+                  />
+                    <label for="html">Front</label>
+                </div>
+                <div>
+                   
+                  <input
+                    type="radio"
+                    id="css"
+                    name="fav_language"
+                    value="CSS"
+                  />
+                    <label for="css">Back</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="javascript"
+                    name="fav_language"
+                    value="JavaScript"
+                  />
+                    <label for="javascript">Left Sleeve</label>
+                </div>
+              </div>
+            </div>
+            <div className="para_text">
+              <p>Upload Logo/ Artwork (.AI or .EPS vector format)</p>
+              <div className="upload_logo">
+                <label htmlFor="file">
+                  <p> Drop your front design</p>
+                  <p>or browse your files</p>
+                  <input type="file" name="" id="file" />
+                </label>
+                <label htmlFor="file">
+                  <p>Drop your back design</p>
+                  <p>or browse your files</p>
+                  <input type="file" name="" id="file" />
+                </label>
+              </div>
+            </div>
+            <div className="number_of_units">
+              <p>Enter the number of units you need?</p>
+              <button>Price break</button>
+            </div>
+            <div className="input_data_required">
+              <input type="text" placeholder="50" />
+              <span>(minimum 50 units required)</span>
+            </div>
+            <div className="select_size_quantity">
+              <p>Select sizes quantity</p>
+              <div className="inputs">
+                <input type="text" placeholder="XS" />
+                <input type="text" placeholder="S" />
+                <input type="text" placeholder="M" />
+                <input type="text" placeholder="L" />
+                <input type="text" placeholder="XL" />
+                <input type="text" placeholder="2XL" />
+              </div>
+            </div>
+            <div className="standard_business_section">
+              <p>Production time</p>
+              <p>Standard - 15 Business days</p>
             </div>
           </div>
         </div>

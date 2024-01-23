@@ -14,7 +14,7 @@ export default function Home() {
         <PrimaryHeader />
         <SecondaryHeader />
       </div>
-      <div className="h-[300px] flex justify-center">just space btw</div>
+      <div className="">just space btw</div>
       <div className="">
         <Footer />
       </div>

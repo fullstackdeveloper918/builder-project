@@ -1,16 +1,16 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import images from "../constants/images";
+import images from "../../constants/images";
 import { toast } from "react-toastify";
 import { Formik } from "formik";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   return (
-    <div className="login_warpper min-w-[100vw] min-h-[100vh] bg-[#f1f1f1] mx-auto flex justify-center items-center">
-      <div className="login_container w-[713px] h-[534px] bg-[#fff] rounded-[30px] pt-[66px]">
-        <div className="login_content w-[591px] mx-auto ">
+    <div className="min-w-[100vw] min-h-[100vh] bg-[#f1f1f1] mx-auto flex justify-center items-center">
+      <div className="w-[713px] h-[534px] bg-[#fff] rounded-[30px] pt-[66px]">
+        <div className="w-[591px] mx-auto">
           <Image
             src={images.ethical_swag}
             alt="ethical_swag_logo"

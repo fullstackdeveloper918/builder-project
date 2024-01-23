@@ -1,24 +1,40 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Products.css";
 import Image from "next/image";
+// import { useRouter } from "next/router";
 import images from "@/constants/images";
 import { Collection_data } from "../../constants/data";
-import { useRouter } from "next/navigation";
-import useFetch from "./../../utils/useFetch";
 
 const Products = () => {
-  const router = useRouter();
+  // const route = useRouter();
+  // console.log(route);
 
-  const [loadQuery, { response, loading }] = useFetch(`/users`, {
-    method: "get",
-  });
+  const [data, setData] = useState([]);
+
+  // const { data, loading, error } = useFetch(API_URL);
 
   useEffect(() => {
-    loadQuery();
-  }, []);
+    // const fetchData = async () => {
+    //   try {
+    //     const response = await fetch(
+    //       "https://eb27-49-43-99-93.ngrok-free.app/api/products/"
+    //     );
+    //     console.log(response);
+    //   } catch (err) {
+    //     console.log(err.message);
+    //   }
+    // };
+    fetch("https://eb27-49-43-99-93.ngrok-free.app/api/products", {
+      headers: {
+        Accept: "*/*",
+        "ngrok-skip-browser-warning": "any",
+      },
+    }).then((res) => console.log(res, "dummy aslui"));
 
-  console.log(response, "response");
+    // fetchData();
+  }, []);
 
   return (
     <div className="collection_wrapper">
