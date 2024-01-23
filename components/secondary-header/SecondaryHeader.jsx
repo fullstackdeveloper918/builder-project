@@ -90,40 +90,45 @@ const SecondaryHeader = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost">Contact</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuRadioGroup
-                value={position}
-                onValueChange={setPosition}
-              >
-                <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="bottom">
-                  Bottom
-                </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="right">
-                  Right
-                </DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+
+          <div>Contact</div>
         </div>
         <div className="container_3">
           <div className="">
-            <Image src={flag} width={67} height={35} alt="like" />
+            <Image
+              src={flag}
+              width={67}
+              height={35}
+              alt="like"
+              className="cursor-pointer"
+            />
           </div>
           <div className="">
-            <Image src={searchImg} width={24} height={24} alt="search" />
+            <Image
+              src={searchImg}
+              width={24}
+              height={24}
+              alt="search"
+              className="cursor-pointer"
+            />
           </div>
           <div className="">
-            <Image src={heartImg} width={29} height={29} alt="like" />
+            <Image
+              src={heartImg}
+              width={29}
+              height={29}
+              alt="like"
+              className="cursor-pointer"
+            />
           </div>
           <div className="" onClick={() => router.push("/cart")}>
-            <Image src={cartImg} width={27} height={27} alt="cart" />
+            <Image
+              src={cartImg}
+              width={27}
+              height={27}
+              alt="cart"
+              className="cursor-pointer"
+            />
           </div>
         </div>
       </div>

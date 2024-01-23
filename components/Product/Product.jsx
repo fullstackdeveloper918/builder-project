@@ -106,9 +106,9 @@ const Product = () => {
               <p>
                 Say hello to your favorite new kangaroo-style classic hoodie!
                 Your new go-to hoodie is made with Tentree® Fairtrade certified
-                100% organic cotton, and it 's Cradle to Cradle Certified™ Gold,
-                which means it can go safely back into the earth once you 're
-                finished <br /> loving it.
+                100% organic cotton, and it{" '"}s Cradle to Cradle Certified™
+                Gold, which means it can go safely back into the earth once you
+                {" '"}re finished <br /> loving it.
                 <span className="read_more">Read More</span>
               </p>
             </div>
@@ -123,6 +123,11 @@ const Product = () => {
                 <button className="btn">Full Color Decoration</button>
                 <button className="btn">No Decoration</button>
               </div>
+            </div>
+            <div className="para_text">
+              <p>
+                How many areas of the product would you like to add a logo to?
+              </p>
             </div>
           </div>
         </div>
