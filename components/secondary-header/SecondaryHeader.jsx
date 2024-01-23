@@ -25,7 +25,7 @@ const SecondaryHeader = () => {
   const pathname = usePathname();
 
   return (
-    <div className="main_container">
+    <div className="main_container header">
       <div className="container">
         <div className="container_1">
           <div className="">
@@ -36,28 +36,22 @@ const SecondaryHeader = () => {
           <div className="text_with_down_icon">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost">
+                <Button variant="ghost" className="shop_menu">
                   Shop
                   <span>
                     <Image src={downIcon} width={8} height={8} alt="search" />
                   </span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup
-                  value={position}
-                  onValueChange={setPosition}
-                >
-                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="bottom">
+              <DropdownMenuContent className="w-56 header-menu">
+                  <DropdownMenuRadioItem value="top" className="shop_submenu">Top</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="bottom" className="shop_submenu">
                     Bottom
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="right">
+                  <DropdownMenuRadioItem value="right" className="shop_submenu">
                     Right
                   </DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
+                
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -65,52 +59,26 @@ const SecondaryHeader = () => {
           <div className="text_with_down_icon">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost">
+                <Button variant="ghost" className="shop_menu">
                   About
                   <span>
                     <Image src={downIcon} width={8} height={8} alt="search" />
                   </span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup
-                  value={position}
-                  onValueChange={setPosition}
-                >
-                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="bottom">
+              <DropdownMenuContent className="w-56 header-menu">
+                  <DropdownMenuRadioItem value="top" className="shop_submenu">Top</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="bottom" className="shop_submenu">
                     Bottom
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="right">
+                  <DropdownMenuRadioItem value="right" className="shop_submenu">
                     Right
                   </DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
+                
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost">Contact</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuRadioGroup
-                value={position}
-                onValueChange={setPosition}
-              >
-                <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="bottom">
-                  Bottom
-                </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="right">
-                  Right
-                </DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="shop_menu">Contact</div>
         </div>
         <div className="container_3">
           <div className="">

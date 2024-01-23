@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React, { useState } from "react";
 import Filter from "../../components/Filter/Filter";
 import Image from "next/image";
@@ -6,7 +6,7 @@ import images from "@/constants/images";
 import Pagination from "../../components/Pagination/Pagination";
 import Products from "../../components/Products/Products";
 
-const Page = () => {
+const page = () => {
   const [state, setState] = useState(false);
   return (
     <>
@@ -19,4 +19,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;
