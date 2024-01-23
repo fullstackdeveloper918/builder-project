@@ -36,8 +36,6 @@ const PrimaryHeader = () => {
     };
   }, []);
 
-  console.log(screenSize, "window.innerWidth");
-
   return (
     <div className="main_container top-bar">
       <div className="container">
@@ -109,10 +107,12 @@ const PrimaryHeader = () => {
             className="login-signup cursor-pointer"
             onClick={() => router.push("/register")}
           >
-            {screenSize > 991 && "SignUp"}
+            {screenSize > 991 && <button>SignUp</button>}
             {screenSize <= 991 && (
               <span>
-                <Image src={signIcon} alt="login" width={18} height={18} />
+                <button>
+                  <Image src={signIcon} alt="Register" width={18} height={18} />
+                </button>
               </span>
             )}
           </div>

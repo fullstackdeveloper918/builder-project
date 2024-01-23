@@ -1,11 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import "./Products.css";
 import Image from "next/image";
 import images from "@/constants/images";
 import { Collection_data } from "../../constants/data";
+import { useRouter } from "next/navigation";
+import useFetch from "./../../utils/useFetch";
 
 const Products = () => {
+  const router = useRouter();
+
+  const [loadQuery, { response, loading }] = useFetch(`/users`, {
+    method: "get",
+  });
+
+  useEffect(() => {
+    loadQuery();
+  }, []);
+
+  console.log(response, "response");
+
   return (
     <div className="collection_wrapper">
       <div className="collection_container">
