@@ -81,7 +81,7 @@ const SecondaryHeader = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <Button variant="ghost">Contact</Button>
+          <Button variant="ghost" className="shop_menu">Contact</Button>
         </div>
         <div className="container_3">
           <div className="">
