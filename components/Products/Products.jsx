@@ -23,11 +23,6 @@ const Products = () => {
       });
   }, []);
 
-  console.log(
-    data?.map((d) => d.image),
-    "myyyyyyyy"
-  );
-
   return (
     <div className="collection_wrapper">
       <div className="collection_container">
