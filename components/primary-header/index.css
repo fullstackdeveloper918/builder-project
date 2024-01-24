@@ -26,6 +26,31 @@ p, div, span {
 .top-bar .container {
   height: 50px;
 }
+.tap_annument {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.14px;
+  background: transparent;
+  display: flex;
+  gap: 10px;
+}
+.tap_annument:hover{
+  background: transparent;
+  color: #fff;
+}
+
+.annument-dropdown {
+  min-width: 10rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.tap_annument:focus-visible, button:focus-visible {
+  --tw-ring-shadow: none;
+}
 
 .container_left {
   display: flex;

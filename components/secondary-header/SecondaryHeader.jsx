@@ -6,9 +6,12 @@ import searchImg from "../../assets/headerPics/Search-black.svg";
 import heartImg from "../../assets/headerPics/Heart.svg";
 import downIcon from "../../assets/headerPics/down-black.svg";
 import logo from "../../assets/headerPics/logo.svg";
-import flag from "../../assets/headerPics/flag.svg";
+import Usa from "../../assets/headerPics/use_flag.svg";
+import Canada from "../../assets/headerPics/canada-flag.svg";
+import CrossIcon from "../../assets/headerPics/corss.svg";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -87,32 +90,28 @@ const SecondaryHeader = () => {
           <div className="">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost">
-                  <Image src={flag} width={67} height={35} alt="like" />
+                <Button variant="ghost" className="language-dropdown">
+                  <span className="flag-img">
+                  <Image src={Usa} width={30} height={22} alt="like" />
+                  </span>
+                  <span className="dropdown-icon">
+                    <Image src={downIcon} width={14} height={14} alt="search" />
+                  </span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup
-                  value={position}
-                  onValueChange={setPosition}
-                >
-                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+              <DropdownMenuContent className="w-56 language-wrapdropdown">
+                  <DropdownMenuRadioItem value="top"><Image src={Usa} width={30} height={22} alt="like" /></DropdownMenuRadioItem>
                   <DropdownMenuRadioItem value="bottom">
-                    Bottom
+                  <Image src={Canada} width={30} height={22} alt="like" />
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="right">
-                    Right
-                  </DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
+       </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="">
+          <div className="header-searchicon">
             {showSearchInput ? (
-              <span>
-                <Input />
+              <div className="header-search">
+                <div>
+                <Input placeholder="Search our store" />
                 <Image
                   src={searchImg}
                   width={24}
@@ -122,7 +121,13 @@ const SecondaryHeader = () => {
                     setShowSearchInput(!showSearchInput);
                   }}
                 />
-              </span>
+                <span>
+                    <Image src={CrossIcon} width={20} height={20} alt="search"  onClick={() => {
+                  setShowSearchInput(false);
+                }}/>
+                  </span> 
+                  </div>
+              </div>
             ) : (
               <Image
                 src={searchImg}
