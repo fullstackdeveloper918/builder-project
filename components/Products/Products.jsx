@@ -18,10 +18,7 @@ const Products = () => {
   useEffect(() => {
     loadQuery();
   }, []);
-  console.log(
-    response?.data?.data?.map((c) => c.colours),
-    "response?.data?.data"
-  );
+
   return (
     <>
       <div className="collection_wrapper">
@@ -120,6 +117,7 @@ const Products = () => {
           </div>
           {response?.data?.data.map((item) => (
             <>
+              {console.log(item?.colours, "in map")}
               <div
                 className="collection_items"
                 onClick={() => router.push("/single-product")}
@@ -136,9 +134,13 @@ const Products = () => {
                     as low as ${item?.unit_price || 45}
                   </div>
                   <div className="colors">
-                    <Dot color={"yellow"} />
-                    <Dot color={"green"} />
-                    <Dot color={"red"} />
+                    {item.colours.split(",").map((c) => {
+                      return (
+                        <>
+                          <Dot color={c} />
+                        </>
+                      );
+                    })}
                   </div>
                 </div>
                 <div className="hidden_icons">

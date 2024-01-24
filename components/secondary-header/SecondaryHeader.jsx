@@ -175,7 +175,10 @@ const SecondaryHeader = () => {
                   >
                     {countries.map((c) => {
                       return (
-                        <DropdownMenuRadioItem value={c.country}>
+                        <DropdownMenuRadioItem
+                          value={c.country}
+                          // style={{ display: "none" }}
+                        >
                           <Image
                             src={c.imageSrc}
                             width={30}
@@ -185,12 +188,6 @@ const SecondaryHeader = () => {
                         </DropdownMenuRadioItem>
                       );
                     })}
-                    {/* <DropdownMenuRadioItem value="top">
-         <Image src={Usa} width={30} height={22} alt="like" />
-       </DropdownMenuRadioItem>
-       <DropdownMenuRadioItem value="bottom">
-         <Image src={Canada} width={30} height={22} alt="like" />
-       </DropdownMenuRadioItem> */}
                   </DropdownMenuRadioGroup>
                 </DropdownMenuContent>
               </DropdownMenu>
