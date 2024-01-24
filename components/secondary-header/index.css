@@ -1,3 +1,10 @@
+h1, h2, h3, h4, h5{
+  font-family: Poppins;
+}
+p, div, span {
+  font-family: '__DM_Sans_ae0b6a';
+}
+
 .container11 {
   display: flex;
   justify-content: space-between;
@@ -28,4 +35,35 @@
   display: flex;
   gap: 20px;
   align-items: center;
+}
+.header-menu {
+  min-width: 16rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.header .shop_menu {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.14px;
+  background: transparent;
+  display: flex;
+  gap: 10px;
+}
+.header .shop_menu:focus-visible {
+  --tw-ring-shadow: none;
+}
+.shop_submenu {
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  transition: .2s all ease-in-out;
+}
+.shop_submenu:hover {
+  background-color: #f7f8fa;
 }

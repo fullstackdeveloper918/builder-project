@@ -7,7 +7,6 @@
   align-items: flex-start;
   background: #050505;
   color: #fff;
-  font-family: "DM Sans";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -27,7 +26,6 @@
 
 .heading_footer {
   color: #fff;
-  font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -37,10 +35,10 @@
 
 .heading_footer_2 {
   color: #fff;
-  font-family: Quicksand;
+  font-family: poppins;
   font-size: 18px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 133.38%; /* 24.008px */
   letter-spacing: 0.18px;
   margin-bottom: 8px;
@@ -90,7 +88,6 @@
   margin: 20px 30px 0px;
   justify-content: space-between;
   color: #fff;
-  font-family: Cabin;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -99,11 +96,26 @@
   text-transform: capitalize;
 }
 
-.banks_main_container_left {
-}
-
 .banks_main_container_right {
   display: flex;
   gap: 5px;
   align-items: center;
+}
+@media (max-width:768px){
+  .footer_container .main_footer_container {
+    flex-direction: column;
+  }
+  .footer_container .banks_main_container {
+    flex-direction: column;
+    align-items: flex-start;
+}
+}
+@media (max-width:479){
+  .footer_container .banks_main_container .banks_main_container_right {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer_container .banks_main_container .banks_main_container_right img {
+  margin-left: -5px;
+}
 }
