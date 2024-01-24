@@ -382,3 +382,56 @@
   font-weight: 400;
   line-height: 16px; /* 114.286% */
 }
+
+.standard_down_line {
+  width: 100%;
+  height: 1px;
+  background: #d9d9d9;
+  margin-top: 2.5rem;
+}
+
+.price_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.price_section p:nth-child(1) {
+  color: #111;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.price_section p:nth-child(2) {
+  color: #111;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 20px; /* 100% */
+  letter-spacing: 0.2px;
+}
+
+.add_to_bulk_container {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.add_to_bulk_container button {
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid var(--green, #a2d061);
+  background: var(--green, #a2d061);
+  padding: 23px 0;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px; /* 70% */
+  text-transform: capitalize;
+}

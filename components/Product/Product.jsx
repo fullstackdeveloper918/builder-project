@@ -201,6 +201,14 @@ const Product = () => {
               <p>Production time</p>
               <p>Standard - 15 Business days</p>
             </div>
+            <div className="standard_down_line"></div>
+            <div className="price_section">
+              <p>Price $20/unit</p>
+              <p>$1000.00</p>
+            </div>
+            <div className="add_to_bulk_container">
+              <button>Add to bulk estimate</button>
+            </div>
           </div>
         </div>
       </div>

@@ -6,7 +6,6 @@ import downArrowImg from "../../assets/headerPics/down.svg";
 import phoneImg from "../../assets/headerPics/phone.svg";
 import searchImg from "../../assets/headerPics/Search.svg";
 import { type } from "./../../redux-setup/store";
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,23 +20,12 @@ import signIcon from "../../assets/headerPics/Sign-up.svg";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 const PrimaryHeader = () => {
   const [position, setPosition] = React.useState("bottom");
 
   const router = useRouter();
   const pathname = usePathname();
   const [screenSize, setScreenSize] = useState(992);
-  const [position, setPosition] = React.useState("bottom");
-
   const handleResize = () => {
     setScreenSize(window.innerWidth);
   };

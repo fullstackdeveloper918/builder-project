@@ -8,34 +8,25 @@ import images from "@/constants/images";
 import { Collection_data } from "../../constants/data";
 
 const Products = () => {
-  // const route = useRouter();
-  // console.log(route);
+  const [data, setData] = useState([]);
 
-  const [loadQuery, { response, loading }] = useFetch(`/collection`, {
-    method: "get",
-  });
+  // const [loadQuery, { response, loading }] = useFetch(`/collection`, {
+  //   method: "get",
+  // });
   // https://test.cybersify.tech/Eswag/public/api/collection
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const response = await fetch(
-    //       "https://eb27-49-43-99-93.ngrok-free.app/api/products/"
-    //     );
-    //     console.log(response);
-    //   } catch (err) {
-    //     console.log(err.message);
-    //   }
-    // };
-    fetch("https://eb27-49-43-99-93.ngrok-free.app/api/products", {
-      headers: {
-        Accept: "*/*",
-        "ngrok-skip-browser-warning": "any",
-      },
-    }).then((res) => console.log(res, "dummy aslui"));
-
-    // fetchData();
+    fetch("https://test.cybersify.tech/Eswag/public/api/products")
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res?.data?.data);
+      });
   }, []);
+
+  console.log(
+    data?.map((d) => d.image),
+    "myyyyyyyy"
+  );
 
   return (
     <div className="collection_wrapper">
@@ -132,36 +123,37 @@ const Products = () => {
             </svg>
           </div>
         </div>
-        {Collection_data.map((item) => (
-          <>
-            <div
-              className="collection_items"
-              onClick={() => router.push("/single-product")}
-            >
-              <Image
-                src={item.src}
-                width={278}
-                height={311}
-                alt="products_images"
-              />
-              <div className="product_content">
-                <h4 className="title">{item.text}</h4>
-                <div className="small_text">as low as $60.00</div>
-                <div className="colors">
-                  <Image
-                    src={item.colors}
-                    width={131}
-                    height={20}
-                    alt="colors_icon"
-                  />
+        {data &&
+          data?.map((item) => (
+            <>
+              <div
+                className="collection_items"
+                onClick={() => router.push("/single-product")}
+              >
+                <Image
+                  src={item?.image}
+                  width={278}
+                  height={311}
+                  alt="products_images"
+                />
+                <div className="product_content">
+                  <h4 className="title">{item.text}</h4>
+                  <div className="small_text">as low as $60.00</div>
+                  <div className="colors">
+                    <Image
+                      src={item.colors}
+                      width={131}
+                      height={20}
+                      alt="colors_icon"
+                    />
+                  </div>
+                </div>
+                <div className="hidden_icons">
+                  <button className="btn">View Product</button>
                 </div>
               </div>
-              <div className="hidden_icons">
-                <button className="btn">View Product</button>
-              </div>
-            </div>
-          </>
-        ))}
+            </>
+          ))}
       </div>
     </div>
   );
