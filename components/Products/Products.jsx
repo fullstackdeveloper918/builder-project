@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Products.css";
 import Image from "next/image";
 import images from "@/constants/images";
@@ -10,9 +10,12 @@ import useFetch from "./../../utils/useFetch";
 const Products = () => {
   const router = useRouter();
 
-  const [loadQuery, { response, loading }] = useFetch(`/collection`, {
-    method: "get",
-  });
+  const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
+    `/collection`,
+    {
+      method: "get",
+    }
+  );
   // https://test.cybersify.tech/Eswag/public/api/collection
 
   useEffect(() => {
