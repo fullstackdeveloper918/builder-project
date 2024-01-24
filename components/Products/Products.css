@@ -1,8 +1,14 @@
-h1, h2, h3, h4, h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: Poppins;
 }
-p, div, span {
-  font-family: '__DM_Sans_ae0b6a';
+p,
+div,
+span {
+  font-family: "__DM_Sans_ae0b6a";
 }
 .collection_wrapper {
   width: 100%;

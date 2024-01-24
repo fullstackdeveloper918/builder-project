@@ -6,6 +6,7 @@ import Image from "next/image";
 import images from "@/constants/images";
 import { Collection_data } from "../../constants/data";
 import useFetch from "../../lib/useFetch";
+import Dot from "./../custom-colored-dot/Dot";
 
 const Products = () => {
   const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
@@ -17,10 +18,10 @@ const Products = () => {
   useEffect(() => {
     loadQuery();
   }, []);
-  console.log(
-    response?.data?.data?.map((c) => c.colours),
-    "response?.data?.data"
-  );
+  // console.log(
+  //   response?.data?.data?.map((c) => c.colours),
+  //   "response?.data?.data"
+  // );
   return (
     <>
       <div className="collection_wrapper">
@@ -135,12 +136,7 @@ const Products = () => {
                     as low as ${item?.unit_price || 45}
                   </div>
                   <div className="colors">
-                    <Image
-                      src={item.colors}
-                      width={131}
-                      height={20}
-                      alt="colors_icon"
-                    />
+                    <Dot color={"yellow"} />
                   </div>
                 </div>
                 <div className="hidden_icons">
