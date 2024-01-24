@@ -5,23 +5,17 @@ import Image from "next/image";
 // import { useRouter } from "next/router";
 import images from "@/constants/images";
 import { Collection_data } from "../../constants/data";
+import useFetch from "../../lib/useFetch";
 
 const Products = () => {
-  const [data, setData] = useState([]);
-
   const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
     `/products`,
     {
       method: "get",
     }
   );
-
   useEffect(() => {
-    fetch("https://test.cybersify.tech/Eswag/public/api/products")
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res?.data?.data);
-      });
+    loadQuery();
   }, []);
 
   return (
@@ -148,33 +142,6 @@ const Products = () => {
                 </div>
                 <div className="hidden_icons">
                   <button className="btn">View Product</button>
-                </div>
-              </div>
-            </>
-          ))}
-          {Collection_data.map((item) => (
-            <>
-              <div
-                className="collection_items"
-                onClick={() => router.push("/single-product")}
-              >
-                <Image
-                  src={item.src}
-                  width={278}
-                  height={311}
-                  alt="products_images"
-                />
-                <div className="product_content">
-                  <h4 className="title">{item.text}</h4>
-                  <div className="small_text">as low as $60.00</div>
-                  <div className="colors">
-                    <Image
-                      src={item.colors}
-                      width={131}
-                      height={20}
-                      alt="colors_icon"
-                    />
-                  </div>
                 </div>
               </div>
             </>
