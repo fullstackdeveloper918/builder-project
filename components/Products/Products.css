@@ -174,3 +174,12 @@ span {
   opacity: 1;
   transform: scale(1);
 }
+
+.colors {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}

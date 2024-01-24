@@ -18,10 +18,10 @@ const Products = () => {
   useEffect(() => {
     loadQuery();
   }, []);
-  // console.log(
-  //   response?.data?.data?.map((c) => c.colours),
-  //   "response?.data?.data"
-  // );
+  console.log(
+    response?.data?.data?.map((c) => c.colours),
+    "response?.data?.data"
+  );
   return (
     <>
       <div className="collection_wrapper">
@@ -137,6 +137,8 @@ const Products = () => {
                   </div>
                   <div className="colors">
                     <Dot color={"yellow"} />
+                    <Dot color={"green"} />
+                    <Dot color={"red"} />
                   </div>
                 </div>
                 <div className="hidden_icons">
