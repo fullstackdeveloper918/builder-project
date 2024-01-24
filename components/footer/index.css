@@ -101,6 +101,9 @@
   gap: 5px;
   align-items: center;
 }
+
+
+/* responsive */
 @media (max-width:768px){
   .footer_container .main_footer_container {
     flex-direction: column;
