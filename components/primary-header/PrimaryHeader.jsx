@@ -50,7 +50,7 @@ const PrimaryHeader = () => {
           <div className="offer_container">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost">
+                <Button variant="ghost" className="tap_annument">
                   What we Offer
                   <span>
                     <Image
@@ -62,21 +62,15 @@ const PrimaryHeader = () => {
                   </span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup
-                  value={position}
-                  onValueChange={setPosition}
-                >
-                  <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="bottom">
+              <DropdownMenuContent className="w-56 annument-dropdown">
+               <DropdownMenuRadioItem value="top" className="shop_submenu">Top</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="bottom" className="shop_submenu">
                     Bottom
                   </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="right">
+                  <DropdownMenuRadioItem value="right" className="shop_submenu">
                     Right
                   </DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
+                
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
