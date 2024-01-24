@@ -6,11 +6,6 @@ import downArrowImg from "../../assets/headerPics/down.svg";
 import phoneImg from "../../assets/headerPics/phone.svg";
 import searchImg from "../../assets/headerPics/Search.svg";
 import { type } from "./../../redux-setup/store";
-import loginIcon from "../../assets/login-icon.svg";
-import signIcon from "../../assets/headerPics/Sign-up.svg";
-import { usePathname, useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,12 +15,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import loginIcon from "../../assets/login-icon.svg";
+import signIcon from "../../assets/headerPics/Sign-up.svg";
+import { usePathname, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+
 const PrimaryHeader = () => {
+  const [position, setPosition] = React.useState("bottom");
+
   const router = useRouter();
   const pathname = usePathname();
   const [screenSize, setScreenSize] = useState(992);
-  const [position, setPosition] = React.useState("bottom");
-
   const handleResize = () => {
     setScreenSize(window.innerWidth);
   };
@@ -79,21 +79,23 @@ const PrimaryHeader = () => {
           <div className="search_container">
             <Image src={searchImg} alt="down arrow" width={16} height={16} />
 
-            <input type="text" placeholder="Search for product..." />
+            <input
+              type="text"
+              placeholder="Search for product..."
+              className="cursor-pointer"
+            />
           </div>
           <div className="login-signup" onClick={() => router.push("/login")}>
-            {screenSize > 991 && <button>Login</button>}
+            {screenSize > 991 && "Login"}
             {screenSize <= 991 && (
-              <span>
-                <button>
-                  <Image src={loginIcon} alt="login" width={15} height={15} />
-                </button>
+              <span className="cursor-pointer">
+                <Image src={loginIcon} alt="login" width={13} height={13} />
               </span>
             )}
           </div>
 
           <div
-            className="cursor-pointer"
+            className="login-signup cursor-pointer"
             onClick={() => router.push("/register")}
           >
             {screenSize > 991 && <button>SignUp</button>}

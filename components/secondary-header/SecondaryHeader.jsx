@@ -141,10 +141,22 @@ const SecondaryHeader = () => {
             )}
           </div>
           <div className="">
-            <Image src={heartImg} width={29} height={29} alt="like" />
+            <Image
+              src={heartImg}
+              width={29}
+              height={29}
+              alt="like"
+              className="cursor-pointer"
+            />
           </div>
           <div className="" onClick={() => router.push("/cart")}>
-            <Image src={cartImg} width={27} height={27} alt="cart" />
+            <Image
+              src={cartImg}
+              width={27}
+              height={27}
+              alt="cart"
+              className="cursor-pointer"
+            />
           </div>
         </div>
       </div>
