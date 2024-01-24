@@ -11,18 +11,15 @@ const Products = () => {
   const router = useRouter();
 
   const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
-    `/collection`,
+    `/products`,
     {
       method: "get",
     }
   );
-  // https://test.cybersify.tech/Eswag/public/api/collection
 
   useEffect(() => {
     loadQuery();
   }, []);
-
-  console.log(response, "response");
 
   return (
     <div className="collection_wrapper">
@@ -119,6 +116,38 @@ const Products = () => {
             </svg>
           </div>
         </div>
+        {response?.data?.data.map((item) => (
+          <>
+            <div
+              className="collection_items"
+              onClick={() => router.push("/single-product")}
+            >
+              <Image
+                src={item?.image}
+                width={278}
+                height={311}
+                alt="products_images"
+              />
+              <div className="product_content">
+                <h4 className="title">{item?.product_title}</h4>
+                <div className="small_text">
+                  as low as ${item?.unit_price || 45}
+                </div>
+                <div className="colors">
+                  <Image
+                    src={item.colors}
+                    width={131}
+                    height={20}
+                    alt="colors_icon"
+                  />
+                </div>
+              </div>
+              <div className="hidden_icons">
+                <button className="btn">View Product</button>
+              </div>
+            </div>
+          </>
+        ))}
         {Collection_data.map((item) => (
           <>
             <div

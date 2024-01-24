@@ -43,61 +43,7 @@ export const Collection_data = [
     text: "Zama Flannel Plaid Button Down Shirt - Unisex",
     colors: images.different_colors,
   },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
-  {
-    src: images.Shirt,
-    text: "Zama Flannel Plaid Button Down Shirt - Unisex",
-    colors: images.different_colors,
-  },
+
 ];
 
 
