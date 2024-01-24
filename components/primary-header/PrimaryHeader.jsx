@@ -63,14 +63,15 @@ const PrimaryHeader = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 annument-dropdown">
-               <DropdownMenuRadioItem value="top" className="shop_submenu">Top</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="bottom" className="shop_submenu">
-                    Bottom
-                  </DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="right" className="shop_submenu">
-                    Right
-                  </DropdownMenuRadioItem>
-                
+                <DropdownMenuRadioItem value="top" className="shop_submenu">
+                  Top
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="bottom" className="shop_submenu">
+                  Bottom
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="right" className="shop_submenu">
+                  Right
+                </DropdownMenuRadioItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -86,8 +87,8 @@ const PrimaryHeader = () => {
             />
           </div>
           <div className="login-signup" onClick={() => router.push("/login")}>
-            {screenSize > 991 && "Login"}
-            {screenSize <= 991 && (
+            {screenSize > 767 && "Login"}
+            {screenSize <= 767 && (
               <span className="cursor-pointer">
                 <Image src={loginIcon} alt="login" width={13} height={13} />
               </span>

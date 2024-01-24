@@ -1,7 +1,6 @@
 import React from "react";
 import "./index.css";
 const Pagination = ({ pages = 5, limit = 10 }) => {
-  console.log(limit);
   return (
     <>
       <div class="pagination">

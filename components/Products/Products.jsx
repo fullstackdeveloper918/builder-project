@@ -17,7 +17,10 @@ const Products = () => {
   useEffect(() => {
     loadQuery();
   }, []);
-
+  console.log(
+    response?.data?.data?.map((c) => c.colours),
+    "response?.data?.data"
+  );
   return (
     <>
       <div className="collection_wrapper">
