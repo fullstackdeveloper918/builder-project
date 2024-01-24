@@ -124,6 +124,9 @@ p, div, span {
   gap: 10px;
   cursor:pointer;
 }
+.language-dropdown:hover {
+  background: transparent;
+}
 .language-dropdown span.flag-img {
   width: 30px;
 }

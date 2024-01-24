@@ -86,7 +86,7 @@ const PrimaryHeader = () => {
             {screenSize <= 991 && (
               <span>
                 <button>
-                  <Image src={loginIcon} alt="login" width={13} height={13} />
+                  <Image src={loginIcon} alt="login" width={15} height={15} />
                 </button>
               </span>
             )}
