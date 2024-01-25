@@ -46,32 +46,32 @@ const Product = ({ product, loading, error }) => {
     if (orderQuantity <= product?.column_1_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_1_retail_price_usd
-          : product?.column_1_retail_price_cad
+          ? product?.column_1_retail_price_usd.replace(/[^0-9.]/g, '')
+          : product?.column_1_retail_price_cad.replace(/[^0-9.]/g, '')
       );
     } else if (orderQuantity <= product?.column_2_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_2_retail_price_usd
-          : product?.column_2_retail_price_cad
+          ? product?.column_2_retail_price_usd.replace(/[^0-9.]/g, '')
+          : product?.column_2_retail_price_cad.replace(/[^0-9.]/g, '')
       );
     } else if (orderQuantity <= product?.column_3_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_3_retail_price_usd
-          : product?.column_3_retail_price_cad
+          ? product?.column_3_retail_price_usd.replace(/[^0-9.]/g, '')
+          : product?.column_3_retail_price_cad.replace(/[^0-9.]/g, '')
       );
     } else if (orderQuantity <= product?.column_4_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_4_retail_price_usd
-          : product?.column_4_retail_price_cad
+          ? product?.column_4_retail_price_usd.replace(/[^0-9.]/g, '')
+          : product?.column_4_retail_price_cad.replace(/[^0-9.]/g, '')
       );
     } else if (orderQuantity > product?.column_4_q) {
       setPrice(
         country === "usa"
-          ? product?.column_5_retail_price_usd
-          : product?.column_5_retail_price_cad
+          ? product?.column_5_retail_price_usd.replace(/[^0-9.]/g, '')
+          : product?.column_5_retail_price_cad.replace(/[^0-9.]/g, '')
       );
     }
   };
@@ -279,7 +279,7 @@ const Product = ({ product, loading, error }) => {
                 <div className="standard_down_line"></div>
                 <div className="price_section">
                   <p>Price ${price}/unit</p>
-                  <p>$1000.00</p>
+                  <p>${price * orderQuantity}</p>
                 </div>
                 <div className="add_to_bulk_container">
                   <button>Add to bulk estimate</button>
