@@ -10,13 +10,12 @@ import { useRouter, useParams } from "next/navigation";
 const page = () => {
   const router = useRouter();
 
-  
   return (
     <>
       <section className="filter_Section">
         <Filter />
         <Products />
-        {/* <Pagination /> */}
+        <Pagination />
       </section>
     </>
   );
