@@ -1,14 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Products.css";
 import Image from "next/image";
-// import { useRouter } from "next/router";
 import images from "@/constants/images";
-import { Collection_data } from "../../constants/data";
 import useFetch from "../../lib/useFetch";
 import Dot from "./../custom-colored-dot/Dot";
+import { useRouter } from "next/navigation";
 
 const Products = () => {
+  const router = useRouter()
   const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
     `/products`,
     {
