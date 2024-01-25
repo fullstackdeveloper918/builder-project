@@ -104,8 +104,7 @@ const Products = ({ response, error, loading }) => {
             </div>
           </div>
          
-        </div>
-      </div>
+       
       {response?.data?.data.map((item) => (
         <>
           <div
@@ -144,9 +143,10 @@ const Products = ({ response, error, loading }) => {
         </>
       ))}
     
-      
+    </div>
+      </div>
     </>
-  );
-};
+  )}
+  
 
 export default Products;
