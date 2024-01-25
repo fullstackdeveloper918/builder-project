@@ -310,7 +310,7 @@ const Product = ({ product, loading, error }) => {
                           alt="Replacement_Icon"
                         />
                       </span>
-                      <span>30 Day Replacemnet</span>
+                      <span>30 Days Replacement</span>
                     </div>
                   </div>
                 </div>
