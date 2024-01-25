@@ -253,7 +253,6 @@ margin: 0 auto;
 }
 
 
-
 /* responsive start */
 @media only screen and (max-width: 1300px) {
   .filterPanel {
@@ -338,7 +337,25 @@ margin: 0 auto;
 /* .collection_Single {
   min-height: 468px;
 } */
-
+.filter_Container.scrolled {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 10px 0;
+  z-index: 999;
+}
+.filter_Container.scrolled +  .filter-panel-wrap {
+  position: sticky;
+  top: 10px;
+  background: #fff;
+  z-index: 9;
+  overflow-y: scroll;
+  /* height: 400px; */
+}
+.filterPanel {
+  width: 100% !important;
+  height: 400px;
+}
 }
 
 
@@ -363,13 +380,15 @@ margin: 0 auto;
 .filter_select {
   position: absolute;
   right: 0;
+  width: 48%;
+  top: 1px;
 }
 .filter_input {
   flex-shrink: 0;
   width: 100%;
 }
 .filter__btn {
-  width: 40%;
+  width: 48%;
   text-align: left;
   display: flex;
   justify-content: center;
@@ -389,5 +408,15 @@ margin: 0 auto;
 }
 .filter_input > input {
   padding: 12px;
+}
+.pagination_content {
+  width: auto !important;
+  gap: 20px !important;
+  padding: 1rem;
+}
+.filterPanel {
+  width: 100% !important;
+  height: 400px;
+  margin: 30px 0;
 }
 }
