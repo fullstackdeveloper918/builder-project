@@ -261,14 +261,16 @@ const Product = ({ product, loading, error }) => {
                 </div>
                 <div className="select_size_quantity">
                   <p>Select sizes quantity</p>
-                  <div className="inputs">
-                    <input type="text" placeholder="XS" />
-                    <input type="text" placeholder="S" />
-                    <input type="text" placeholder="M" />
-                    <input type="text" placeholder="L" />
-                    <input type="text" placeholder="XL" />
-                    <input type="text" placeholder="2XL" />
-                  </div>
+                  {product?.product_dimensions?.sizes && (
+                    <div className="inputs">
+                      {product?.product_dimensions?.sizes?.map((p) => (
+                        <button>{p}</button>
+                      ))}
+                    </div>
+                  )}
+                  {product?.product_dimensions?.other && (
+                    <div>{product?.product_dimensions?.other}</div>
+                  )}
                 </div>
                 <div className="standard_business_section">
                   <p>Production time</p>
