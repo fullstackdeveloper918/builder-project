@@ -18,6 +18,8 @@ import Stack_Card2 from "../assets/Stack_Card_img2.svg";
 import Stack_Card3 from "../assets/Stack_Card_img3.svg";
 import Stack_Card4 from "../assets/Stack_Card_img4.svg";
 import Stack_Card5 from "../assets/Stack_Card_img5.svg";
+import Replacement_Icon from "../assets/Replacement_Icon.svg";
+import Fast_Delivery_Icon from "../assets/Fast_Delivery_Icon.svg";
 
 const images = {
   ethical_swag,
@@ -40,6 +42,8 @@ const images = {
   Stack_Card3,
   Stack_Card4,
   Stack_Card5,
+  Replacement_Icon,
+  Fast_Delivery_Icon,
 };
 
 export default images;

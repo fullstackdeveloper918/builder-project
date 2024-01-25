@@ -1,54 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import Image from "next/image";
 import images from "@/constants/images";
+import { LIST } from "@/constants/data";
+import Dot from "../custom-colored-dot/Dot";
 
 const Product = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [
+    { url: images.shirt_small },
+    { url: images.Cup1 },
+    { url: images.Stack_Card2 },
+    { url: images.Stack_Card1 },
+  ];
+
+  const goToPrev = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
   return (
     <>
       <div className="detail_page_wrapper">
         <div className="detail_page_container">
           <div className="detail_page_left_top">
             <div className="detail_page_image_content">
-              <Image
-                src={images.shirt_small}
-                width={400}
-                height={560}
-                alt="Single_Product_Image"
-              />
-            </div>
-            <div className="images_container">
-              <div className="img">
+              <div>
                 <Image
-                  src={images.shirt_small}
-                  alt="Single_Product_Small_Images"
-                  width={61}
-                  height={81}
+                  src={slides[currentIndex].url}
+                  width={400}
+                  height={560}
+                  alt="Single_Product_Image"
                 />
               </div>
-              <div className="img">
-                <Image
-                  src={images.shirt_small}
-                  alt="Single_Product_Small_Images"
-                  width={61}
-                  height={81}
-                />
-              </div>
-              <div className="img">
-                <Image
-                  src={images.shirt_small}
-                  alt="Single_Product_Small_Images"
-                  width={61}
-                  height={81}
-                />
-              </div>
-              <div className="img">
-                <Image
-                  src={images.shirt_small}
-                  alt="Single_Product_Small_Images"
-                  width={61}
-                  height={81}
-                />
+              <div className="slider_container">
+                <p onClick={goToPrev}>Prev</p>
+                {slides &&
+                  slides.map((img) => {
+                    <>
+                      <div className="thumbnail_container">
+                        <Image
+                          src={img.url}
+                          width={61}
+                          height={81}
+                          alt="thumbnail_images"
+                        />
+                      </div>
+                    </>;
+                  })}
+                <p onClick={goToNext}>Next</p>
               </div>
             </div>
           </div>
@@ -209,8 +217,61 @@ const Product = () => {
             <div className="add_to_bulk_container">
               <button>Add to bulk estimate</button>
             </div>
+            <div className="estimate_text_content">
+              <p>
+                Total estimate doesn't include taxes and shipping fees. Payment
+                is made after mockups are approved.
+              </p>
+            </div>
+            <div className="bottom_icons">
+              <div className="first_content">
+                <span>
+                  <Image
+                    src={images.Fast_Delivery_Icon}
+                    width={30}
+                    height={30}
+                    alt="fast_delivery_icon"
+                  />
+                </span>
+                <span>Fast Delivery</span>
+              </div>
+              <div className="second_content">
+                <span>
+                  <Image
+                    src={images.Replacement_Icon}
+                    width={30}
+                    height={30}
+                    alt="Replacement_Icon"
+                  />
+                </span>
+                <span>30 Day Replacemnet</span>
+              </div>
+            </div>
           </div>
         </div>
+        <div className="horizontal_line"></div>
+        <div>text</div>
+        {LIST.map((item) => {
+          <>
+            <div className="collection_items">
+              <Image
+                src={item?.image}
+                width={278}
+                height={311}
+                alt="products_images"
+              />
+              <div className="product_content">
+                <h4 className="title"></h4>
+                <div className="small_text">as low as</div>
+                <div className="colors"></div>
+              </div>
+
+              <div className="hidden_icons">
+                <button className="btn">View Product</button>
+              </div>
+            </div>
+          </>;
+        })}
       </div>
     </>
   );
