@@ -8,6 +8,7 @@ import SecondaryHeader from "./../components/secondary-header/SecondaryHeader";
 import Footer from "./../components/footer/Footer";
 import Pagination from "@/components/Pagination/Pagination";
 import Dot from "@/components/custom-colored-dot/Dot";
+import StackCards from "../components/StackCards/StackCards";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
         <SecondaryHeader />
       </div>
       <div className="">just space btw</div>
+      <div className="">
+        <StackCards />
+      </div>
 
       <div className="">
         <Footer />
