@@ -11,6 +11,7 @@ import Canada from "../../assets/headerPics/canada-flag.svg";
 import CrossIcon from "../../assets/headerPics/corss.svg";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   DropdownMenu,
@@ -21,6 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { usePathname, useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
+import { selectCountry } from "@/redux-setup/countrySlice";
 
 const countries = [
   {
@@ -40,6 +42,11 @@ const SecondaryHeader = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [country, setCountry] = useState("usa");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(selectCountry(country));
+  }, [country]);
 
   const [screenSize, setScreenSize] = useState(992);
   const handleResize = () => {
