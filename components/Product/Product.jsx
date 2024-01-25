@@ -3,6 +3,8 @@ import "./Product.css";
 import Image from "next/image";
 import images from "@/constants/images";
 import { useSelector, useDispatch } from "react-redux";
+import Loaders from "../../components/loaders/Loaders";
+
 const Product = ({ product, loading, error }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [orderQuantity, setOrderQuantity] = useState(0);
@@ -76,7 +78,9 @@ const Product = ({ product, loading, error }) => {
   return (
     <>
       {loading ? (
-        <div>Loadinggggggg</div>
+        <div>
+          <Loaders />
+        </div>
       ) : (
         !error && (
           <div className="detail_page_wrapper">
