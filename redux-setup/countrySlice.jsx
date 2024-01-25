@@ -9,6 +9,7 @@ export const CountrySlice = createSlice({
   initialState,
   reducers: {
     selectCountry: (state, action) => {
+      // console.log("selectCountry ran", action.payload);
       state.value = action.payload;
     },
   },
