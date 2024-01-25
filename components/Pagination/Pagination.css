@@ -3,6 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
   margin-block: 2rem;
+}
+
+.pagination_content {
+  background: rgb(248, 244, 244);
+  border-radius: 10px;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
 }

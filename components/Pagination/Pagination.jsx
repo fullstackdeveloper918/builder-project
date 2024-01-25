@@ -6,11 +6,13 @@ const Pagination = ({ totalCount = 50, limit = 10 }) => {
   return (
     <>
       <div class="pagination_container">
-        <button>Previous</button>
-        {pageArray?.map((p) => {
-          return <button>{p}</button>;
-        })}
-        <button>Next</button>
+        <div className="pagination_content">
+          <button>Previous</button>
+          {pageArray?.map((p) => {
+            return <button>{p}</button>;
+          })}
+          <button>Next</button>
+        </div>
       </div>
     </>
   );
