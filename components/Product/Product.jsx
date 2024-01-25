@@ -37,7 +37,7 @@ const Product = ({ product, loading, error }) => {
 
   useEffect(() => {
     fetchPrice();
-  }, [orderQuantity, product]);
+  }, [orderQuantity, product, country]);
 
   const fetchPrice = () => {
     if (orderQuantity <= product?.column_1_qty) {
