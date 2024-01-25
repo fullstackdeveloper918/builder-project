@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import "./Products.css";
 import Image from "next/image";
-// import { useRouter } from "next/router";
 import images from "@/constants/images";
 import { Collection_data } from "../../constants/data";
+import Featured_product from "../../assets/headerPics/main-product.png";
 import useFetch from "../../lib/useFetch";
 import Dot from "./../custom-colored-dot/Dot";
 
@@ -26,19 +26,13 @@ const Products = () => {
           <div className="collection_Single">
             <div className="imgContent">
               <Image
-                src={images.Cup2}
+                src={Featured_product}
                 width={221}
                 height={345}
                 alt="cup"
                 className="img"
               />
-              <Image
-                src={images.Cup1}
-                width={148}
-                height={231}
-                alt="cup"
-                className="img"
-              />
+          
             </div>
             <div className="textContent">
               <h4 className="textContent_title">

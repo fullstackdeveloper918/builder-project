@@ -7,11 +7,12 @@ import Pagination from "../../components/Pagination/Pagination";
 import Products from "../../components/Products/Products";
 
 const page = () => {
-  const [state, setState] = useState(false);
+  const [activeFilter, setActiveFilter] = useState(false);
+
   return (
     <>
-      <section className="filter_Section">
-        <Filter />
+      <section className={`container ${activeFilter ? "category-section" : ""}`}>
+        <Filter activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>
         <Products />
         <Pagination />
       </section>

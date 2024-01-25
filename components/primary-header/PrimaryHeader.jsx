@@ -39,7 +39,7 @@ const PrimaryHeader = () => {
 
   return (
     <div className="main_container top-bar">
-      <div className="container">
+      <div className="primary-header-container ">
         <div className="container_left">
           <div className="offer_container">
             <div className="">

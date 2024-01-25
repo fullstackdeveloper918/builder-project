@@ -6,8 +6,7 @@ import FilterPanel from './FilterPanel'
 import images from "../../constants/images";
 import { LIST, PRODUCT_TYPE_LIST } from "../../constants/data";
 
-const Filter = () => {
-  const [activeFilter, setActiveFilter] = useState(false);
+const Filter = ({activeFilter, setActiveFilter}) => {
 
   return (
     <>
@@ -34,7 +33,7 @@ const Filter = () => {
           </select>
         </div>
       </div>
-      <div>
+      <div className="filter-panel-wrap">
 
       {activeFilter && <FilterPanel />}
       </div>
