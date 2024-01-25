@@ -4,6 +4,7 @@ import Image from "next/image";
 import images from "@/constants/images";
 import { useSelector, useDispatch } from "react-redux";
 import Loaders from "../../components/loaders/Loaders";
+import Dot from "../custom-colored-dot/Dot";
 
 const Product = ({ product, loading, error }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -74,6 +75,8 @@ const Product = ({ product, loading, error }) => {
       );
     }
   };
+
+  const colors = product?.colours?.split(",");
 
   return (
     <>
@@ -166,6 +169,17 @@ const Product = ({ product, loading, error }) => {
                 <div className="input-checkbox">
                   <input type="checkbox" name="" id="" />
                   <span>Is this a sample ?</span>
+                </div>
+                <div className="select_color_section">
+                  <p>Select Color</p>
+                  <div className="colors_container">
+                    {colors &&
+                      colors.map((color, index) => (
+                        <>
+                          <Dot color={color} key={index} />
+                        </>
+                      ))}
+                  </div>
                 </div>
                 <div className="customization_text">
                   <p>Select Customization</p>

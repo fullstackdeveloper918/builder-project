@@ -164,6 +164,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+  margin-block: 0.8rem;
 }
 
 .input-checkbox input[type="checkbox"] {
@@ -523,4 +524,34 @@
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.18px;
+}
+
+.colors_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.select_color_section {
+  margin-bottom: 1.5rem;
+}
+
+.select_color_section p {
+  color: #111;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 100% */
+  margin-bottom: 1rem;
+}
+
+.customization_text p {
+  color: #111;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 100% */
 }
