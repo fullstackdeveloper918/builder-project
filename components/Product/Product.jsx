@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Product.css";
 import Image from "next/image";
 import images from "@/constants/images";
 import { LIST } from "@/constants/data";
 import Dot from "../custom-colored-dot/Dot";
 
-const Product = () => {
+const Product = ({ product }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
@@ -25,6 +25,44 @@ const Product = () => {
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
+  };
+  // console.log(product, "product forom component");
+  // console.log(response?.data?.product_data?.certBy  colours , "single data");
+  // column_1_qty
+  // column_1_retail_price_usd
+  // column_2_qty
+  // column_2_retail_price_usd till 5
+  // decoration_location
+  // decoration_options
+  // image
+  // product-dimensions
+
+  const [orderQuantity, setOrderQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
+
+  const setQuantity = (e) => {
+    e.preventDefault();
+    setOrderQuantity(e.target.value);
+  };
+
+  // useEffect(() => {
+  console.log(product?.column_1_qty, product?.column_1_retail_price_usd);
+  console.log(product?.column_2_qty, product?.column_2_retail_price_usd);
+  // }, [])
+
+  useEffect(() => {
+    fetchPrice;
+  }, [orderQuantity]);
+
+  const fetchPrice = () => {
+    if (orderQuantity <= product?.column_1_qty) {
+      setPrice(product?.column_1_retail_price_usd);
+    } else if (
+      orderQuantity > product?.column_1_qty &&
+      orderQuantity <= product?.column_2_qty
+    ) {
+      setPrice(product?.column_2_retail_price_usd);
+    }
   };
 
   return (
@@ -62,48 +100,26 @@ const Product = () => {
           </div>
 
           <div className="detail_page_right_section">
-            <div className="tag">
-              <p>Certified B Corporation</p>
-            </div>
+            {product?.certBy && (
+              <div className="tag">
+                <p>Certified B Corporation</p>
+              </div>
+            )}
             <div className="title">
-              <h4>
-                Tentree® Men’s Kangaroo Organic <br />
-                Cotton Hoodie
-              </h4>
+              <h4>{product?.title}</h4>
             </div>
             <div className="reviews">
               <div className="star_review">
+                {/* <span className="star_review_images">
+                    <Image
+                      src={images.star}
+                      width={20}
+                      height={20}
+                      alt="review_images"
+                    />
+                </span> */}
                 <span className="star_review_images">
-                  <Image
-                    src={images.star}
-                    width={20}
-                    height={20}
-                    alt="review_images"
-                  />
-                </span>
-                <span className="star_review_images">
-                  <Image
-                    src={images.star}
-                    width={20}
-                    height={20}
-                    alt="review_images"
-                  />
-                </span>
-                <span className="star_review_images">
-                  <Image
-                    src={images.star}
-                    width={20}
-                    height={20}
-                    alt="review_images"
-                  />
-                </span>
-                <span className="star_review_images">
-                  <Image
-                    src={images.star}
-                    width={20}
-                    height={20}
-                    alt="review_images"
-                  />
+                  {product?.emoji_ratings}
                 </span>
               </div>
               <div className="text_review">
@@ -112,11 +128,7 @@ const Product = () => {
             </div>
             <div className="text_content">
               <p>
-                Say hello to your favorite new kangaroo-style classic hoodie!
-                Your new go-to hoodie is made with Tentree® Fairtrade certified
-                100% organic cotton, and it{" '"}s Cradle to Cradle Certified™
-                Gold, which means it can go safely back into the earth once you
-                {" '"}re finished <br /> loving it.
+                {product?.product_description}
                 <span className="read_more">Read More</span>
               </p>
             </div>
@@ -191,7 +203,13 @@ const Product = () => {
               <button>Price break</button>
             </div>
             <div className="input_data_required">
-              <input type="text" placeholder="50" />
+              <input
+                type="number"
+                placeholder="50"
+                name="orderQuantity"
+                value={orderQuantity}
+                onChange={setQuantity}
+              />
               <span>(minimum 50 units required)</span>
             </div>
             <div className="select_size_quantity">
@@ -211,7 +229,7 @@ const Product = () => {
             </div>
             <div className="standard_down_line"></div>
             <div className="price_section">
-              <p>Price $20/unit</p>
+              <p>Price ${price}/unit</p>
               <p>$1000.00</p>
             </div>
             <div className="add_to_bulk_container">

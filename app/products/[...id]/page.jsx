@@ -6,7 +6,6 @@ import useFetch from "../../../lib/useFetch";
 
 const page = () => {
   const params = useParams();
-  console.log(params?.id[0], "papapa");
 
   const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
     `/products/${params?.id[0]}`,
@@ -19,10 +18,11 @@ const page = () => {
     loadQuery();
   }, []);
 
-  console.log(response, "single data");
+  
+
   return (
     <>
-      <Product />
+      <Product product={response?.data} />
     </>
   );
 };
