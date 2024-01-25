@@ -22,7 +22,7 @@ const page = () => {
 
   return (
     <>
-      <Product product={response?.data} />
+      <Product product={response?.data} loading={loading} error={error}  />
     </>
   );
 };
