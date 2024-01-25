@@ -486,3 +486,41 @@
   background-color: #d9d9d9;
   margin-bottom: 1rem;
 }
+
+.collection_items {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.swag_added_section {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.swag_added_section h2 {
+  color: #111;
+  font-family: Poppins;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 133.38%; /* 34.679px */
+  letter-spacing: 0.26px;
+}
+
+.swag_added_section button {
+  width: 172px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 130px;
+  border: 1px solid var(--green, #a2d061);
+  color: var(--green, #a2d061);
+  text-align: center;
+  font-family: Quicksand;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.18px;
+}
