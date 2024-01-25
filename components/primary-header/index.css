@@ -7,7 +7,7 @@ p, div, span {
 .top-bar {
   background-color: #a2d061;
 }
-.container {
+.primary-header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;

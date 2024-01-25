@@ -9,6 +9,7 @@ import logo from "../../assets/headerPics/logo.svg";
 import Usa from "../../assets/headerPics/use_flag.svg";
 import Canada from "../../assets/headerPics/canada-flag.svg";
 import CrossIcon from "../../assets/headerPics/corss.svg";
+import Humburg from "../../assets/headerPics/menu-bar.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useSelector, useDispatch } from "react-redux";
@@ -20,6 +21,13 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { usePathname, useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { selectCountry } from "@/redux-setup/countrySlice";
@@ -39,6 +47,7 @@ const countries = [
 
 const SecondaryHeader = () => {
   const [showSearchInput, setShowSearchInput] = useState(false);
+  const [openLinks, setOpenLinks] = useState(false)
   const router = useRouter();
   const pathname = usePathname();
   const [country, setCountry] = useState("usa");
@@ -61,56 +70,82 @@ const SecondaryHeader = () => {
   }, []);
 
   return (
-    <div className="main_container header">
-      <div className="container">
-        {screenSize <= 767 && (
-          <Image src={downIcon} width={34} height={34} alt="search" />
-        )}
-
+    <div className={`main_container header ${openLinks ? "open_Sidebar" : ""}`}>
+      <div className="primary-header-container ">
+        <span className="humburg-menu">
+          <Image src={Humburg} width={34} height={34} alt="downIcon" onClick={() => setOpenLinks(true)} />
+        </span>
         <div className="container_1">
-          <div className="">
+          <div className="header_logo">
             <Image src={logo} width={220} height={50} alt="search" />
           </div>
         </div>
-        {screenSize > 767 && (
-          <>
-            <div className="container_2">
+        <>
+          <div className="container_2">
+            <div className="menu-center">
+              <span className="menu_cross"><Image src={CrossIcon} width={20} height={20} alt="Cross_Icon" onClick={() => setOpenLinks(false)} /></span>
               <div className="text_with_down_icon">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="shop_menu">
-                      Shop
-                      <span>
-                        <Image
-                          src={downIcon}
-                          width={8}
-                          height={8}
-                          alt="search"
-                        />
-                      </span>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56 header-menu">
-                    <DropdownMenuRadioItem value="top" className="shop_submenu">
-                      Top
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem
-                      value="bottom"
-                      className="shop_submenu"
-                    >
-                      Bottom
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem
-                      value="right"
-                      className="shop_submenu"
-                    >
-                      Right
-                    </DropdownMenuRadioItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                {
+                  openLinks ?   (
+                    <>
+                      <Accordion type="single" collapsible className="mobil-menuwrap">
+                        <AccordionItem value="item-1" className="w-full">
+                          <AccordionTrigger>Shop</AccordionTrigger>
+                          <AccordionContent>Top</AccordionContent>
+                          <AccordionContent>Bottom</AccordionContent>
+                          <AccordionContent>Right</AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2" className="w-full">
+                          <AccordionTrigger>About</AccordionTrigger>
+                          <AccordionContent>Top</AccordionContent>
+                          <AccordionContent>Bottom</AccordionContent>
+                          <AccordionContent>Right</AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                     
+                    </>
+                  ) : (
+                    
+                    <>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" className="shop_menu">
+                            Shop
+                            <span>
+                              <Image
+                                src={downIcon}
+                                width={8}
+                                height={8}
+                                alt="search"
+                              />
+                            </span>
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-56 header-menu">
+                          <DropdownMenuRadioItem value="top" className="shop_submenu">
+                            Top
+                          </DropdownMenuRadioItem>
+                          <DropdownMenuRadioItem
+                            value="bottom"
+                            className="shop_submenu"
+                          >
+                            Bottom
+                          </DropdownMenuRadioItem>
+                          <DropdownMenuRadioItem
+                            value="right"
+                            className="shop_submenu"
+                          >
+                            Right
+                          </DropdownMenuRadioItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </>
+                  )
+                }
+
               </div>
 
-              <div className="text_with_down_icon">
+            { openLinks ? "" : ( <div className="text_with_down_icon">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="shop_menu">
@@ -143,20 +178,14 @@ const SecondaryHeader = () => {
                     </DropdownMenuRadioItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              </div>
+              </div>)}
               <Button variant="ghost" className="shop_menu">
                 Contact
               </Button>
-            </div>
-          </>
-        )}
 
-        <div className="container_3">
-          {screenSize > 767 && (
-            <div className="">
               <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="language-dropdown">
+                <DropdownMenuTrigger asChild >
+                  <Button variant="ghost" className="language-dropdown mobile-menu">
                     <span className="flag-img">
                       <Image
                         src={country === "canada" ? Canada : Usa}
@@ -184,7 +213,7 @@ const SecondaryHeader = () => {
                       return (
                         <DropdownMenuRadioItem
                           value={c.country}
-                          // style={{ display: "none" }}
+                        // style={{ display: "none" }}
                         >
                           <Image
                             src={c.imageSrc}
@@ -199,8 +228,57 @@ const SecondaryHeader = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-          )}
+          </div>
+        </>
 
+
+        <div className="container_3">
+          <div className="">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild >
+                <Button variant="ghost" className="language-dropdown desktop-menu">
+                  <span className="flag-img">
+                    <Image
+                      src={country === "canada" ? Canada : Usa}
+                      width={30}
+                      height={22}
+                      alt="like"
+                    />
+                  </span>
+                  <span className="dropdown-icon">
+                    <Image
+                      src={downIcon}
+                      width={14}
+                      height={14}
+                      alt="search"
+                    />
+                  </span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 language-wrapdropdown">
+                <DropdownMenuRadioGroup
+                  value={country}
+                  onValueChange={setCountry}
+                >
+                  {countries.map((c) => {
+                    return (
+                      <DropdownMenuRadioItem
+                        value={c.country}
+                      // style={{ display: "none" }}
+                      >
+                        <Image
+                          src={c.imageSrc}
+                          width={30}
+                          height={22}
+                          alt="like"
+                        />
+                      </DropdownMenuRadioItem>
+                    );
+                  })}
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
           <div className="header-searchicon">
             {showSearchInput ? (
               <div className="header-search">
@@ -220,7 +298,7 @@ const SecondaryHeader = () => {
                       src={CrossIcon}
                       width={20}
                       height={20}
-                      alt="search"
+                      alt="cross_Icon"
                       onClick={() => {
                         setShowSearchInput(false);
                       }}
@@ -262,6 +340,8 @@ const SecondaryHeader = () => {
             />
           </div>
         </div>
+
+
       </div>
     </div>
   );
