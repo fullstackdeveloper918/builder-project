@@ -101,6 +101,9 @@ const Products = ({ response, error, loading }) => {
                   fill="#EBEBEB"
                 />
               </svg>
+              <div className="checkbtn">
+                <button>check out</button>
+              </div>
             </div>
           </div>
          

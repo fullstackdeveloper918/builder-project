@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Filter.css";
 import Image from "next/image";
 import downIcon from "../../assets/headerPics/down-black.svg";
@@ -17,10 +17,30 @@ import { LIST, PRODUCT_TYPE_LIST } from "../../constants/data";
 
 const Filter = ({ activeFilter, setActiveFilter }) => {
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate the scroll position, you can adjust the threshold as needed
+      const isScrolled = window.scrollY > 100;
+
+      // Set the state based on the scroll position
+      setScrolled(isScrolled);
+    };
+
+    // Add the event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* Filter Section */}
-      <div className="filter_Container">
+      <div className={`filter_Container ${scrolled ? 'scrolled' : ''}`}>
         <button className="filter__btn" onClick={() => setActiveFilter(!activeFilter)}>
           <span>
             <Image
