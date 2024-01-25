@@ -7,6 +7,7 @@ import PrimaryHeader from "./../components/primary-header/PrimaryHeader";
 import SecondaryHeader from "./../components/secondary-header/SecondaryHeader";
 import Footer from "./../components/footer/Footer";
 import Pagination from "@/components/Pagination/Pagination";
+import StackCards from "../components/StackCards/StackCards";
 
 export default function Home() {
   return (
@@ -15,7 +16,9 @@ export default function Home() {
         <PrimaryHeader />
         <SecondaryHeader />
       </div>
-      <div className="">just space btw</div>
+      <div className="">
+        <StackCards />
+      </div>
       <div className="">
         <Footer />
       </div>
