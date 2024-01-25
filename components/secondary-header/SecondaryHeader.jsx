@@ -12,6 +12,7 @@ import CrossIcon from "../../assets/headerPics/corss.svg";
 import Humburg from "../../assets/headerPics/menu-bar.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   DropdownMenu,
@@ -29,6 +30,7 @@ import {
 } from "@/components/ui/accordion"
 import { usePathname, useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
+import { selectCountry } from "@/redux-setup/countrySlice";
 
 const countries = [
   {
@@ -49,6 +51,11 @@ const SecondaryHeader = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [country, setCountry] = useState("usa");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(selectCountry(country));
+  }, [country]);
 
   const [screenSize, setScreenSize] = useState(992);
   const handleResize = () => {

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Products.css";
 import Image from "next/image";
 import images from "@/constants/images";
@@ -7,17 +7,11 @@ import { Collection_data } from "../../constants/data";
 import Featured_product from "../../assets/headerPics/main-product.png";
 import useFetch from "../../lib/useFetch";
 import Dot from "./../custom-colored-dot/Dot";
+import { useRouter } from "next/navigation";
+import Loaders from "../../components/loaders/Loaders";
 
-const Products = () => {
-  const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
-    `/products`,
-    {
-      method: "get",
-    }
-  );
-  useEffect(() => {
-    loadQuery();
-  }, []);
+const Products = ({ response, error, loading }) => {
+  const router = useRouter();
 
   return (
     <>
@@ -109,42 +103,48 @@ const Products = () => {
               </svg>
             </div>
           </div>
-          {response?.data?.data.map((item) => (
-            <>
-              {console.log(item?.colours, "in map")}
-              <div
-                className="collection_items"
-                onClick={() => router.push("/single-product")}
-              >
-                <Image
-                  src={item?.image}
-                  width={278}
-                  height={311}
-                  alt="products_images"
-                />
-                <div className="product_content">
-                  <h4 className="title">{item?.product_title}</h4>
-                  <div className="small_text">
-                    as low as ${item?.unit_price || 45}
-                  </div>
-                  <div className="colors">
-                    {item.colours.split(",").map((c) => {
-                      return (
-                        <>
-                          <Dot color={c} />
-                        </>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className="hidden_icons">
-                  <button className="btn">View Product</button>
-                </div>
-              </div>
-            </>
-          ))}
+         
         </div>
       </div>
+      {response?.data?.data.map((item) => (
+        <>
+          <div
+            className="collection_items"
+            onClick={() => router.push(`products/${item?.id}`)}
+          >
+            <Image
+              src={item?.image}
+              width={278}
+              height={311}
+              alt="products_images"
+            />
+            <div className="product_content">
+              <h4 className="title">{item?.product_title}</h4>
+              <div className="small_text">
+                as low as ${item?.unit_price || 0}
+              </div>
+              <div className="colors">
+                {item.colours.split(",").map((c) => {
+                  return (
+                    <>
+                      <Dot color={c} />
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div
+              className="hidden_icons"
+              onClick={() => router.push(`products/${item?.id}`)}
+            >
+              <button className="btn">View Product</button>
+            </div>
+          </div>
+        </>
+      ))}
+    
+      
     </>
   );
 };
