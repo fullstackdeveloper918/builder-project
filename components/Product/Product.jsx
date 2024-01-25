@@ -282,6 +282,38 @@ const Product = ({ product, loading, error }) => {
                 <div className="add_to_bulk_container">
                   <button>Add to bulk estimate</button>
                 </div>
+                <div>
+                  <p className="total_estimate_container_text">
+                    Total estimate doesn't include taxes and shipping fees.
+                    Payment is made after mockups are approved.
+                  </p>
+                </div>
+                <div className="bottom_icons">
+                  <div className="container">
+                    <div className="content">
+                      <span>
+                        <Image
+                          src={images.Fast_Delivery_Icon}
+                          width={30}
+                          height={30}
+                          alt="Fast_Delivery_Icon"
+                        />
+                      </span>
+                      <span>Fast Delivery</span>
+                    </div>
+                    <div className="content">
+                      <span>
+                        <Image
+                          src={images.Replacement_Icon}
+                          width={30}
+                          height={30}
+                          alt="Replacement_Icon"
+                        />
+                      </span>
+                      <span>30 Day Replacemnet</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
