@@ -8,7 +8,7 @@ import Dot from "./../custom-colored-dot/Dot";
 import { useRouter } from "next/navigation";
 
 const Products = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [loadQuery, { response, loading, error, errorMessage }] = useFetch(
     `/products`,
     {
@@ -117,10 +117,9 @@ const Products = () => {
           </div>
           {response?.data?.data.map((item) => (
             <>
-              {console.log(item?.colours, "in map")}
               <div
                 className="collection_items"
-                onClick={() => router.push("/single-product")}
+                onClick={() => router.push(`products/${item?.id}`)}
               >
                 <Image
                   src={item?.image}
@@ -131,7 +130,7 @@ const Products = () => {
                 <div className="product_content">
                   <h4 className="title">{item?.product_title}</h4>
                   <div className="small_text">
-                    as low as ${item?.unit_price || 45}
+                    as low as ${item?.unit_price || 0}
                   </div>
                   <div className="colors">
                     {item.colours.split(",").map((c) => {
@@ -143,7 +142,10 @@ const Products = () => {
                     })}
                   </div>
                 </div>
-                <div className="hidden_icons">
+                
+                <div className="hidden_icons" 
+                onClick={() => router.push(`products/${item?.id}`)}
+                >
                   <button className="btn">View Product</button>
                 </div>
               </div>
