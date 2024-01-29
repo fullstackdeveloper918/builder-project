@@ -29,7 +29,6 @@ const Product = ({ product, loading, error }) => {
     return () => clearTimeout(getData);
   }, [orderQuantity]);
 
-
   const goToPrev = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -273,16 +272,14 @@ const Product = ({ product, loading, error }) => {
                 </div>
                 <div className="select_size_quantity">
                   <p>Select sizes quantity</p>
-                  {product?.product_dimensions?.sizes && (
-                    <div className="inputs">
-                      {product?.product_dimensions?.sizes?.map((p) => (
-                        <button>{p}</button>
-                      ))}
-                    </div>
-                  )}
-                  {product?.product_dimensions?.other && (
-                    <div>{product?.product_dimensions?.other}</div>
-                  )}
+                  <div className="inputs">
+                    <input type="text" placeholder="XS" />
+                    <input type="text" placeholder="S" />
+                    <input type="text" placeholder="M" />
+                    <input type="text" placeholder="L" />
+                    <input type="text" placeholder="XL" />
+                    <input type="text" placeholder="2XL" />
+                  </div>
                 </div>
                 <div className="standard_business_section">
                   <p>Production time</p>
@@ -291,7 +288,7 @@ const Product = ({ product, loading, error }) => {
                 <div className="standard_down_line"></div>
                 <div className="price_section">
                   <p>Price ${price}/unit</p>
-                  <p>${price * orderQuantity}</p>
+                  <p>$1000.00</p>
                 </div>
                 <div className="add_to_bulk_container">
                   <button>Add to bulk estimate</button>
