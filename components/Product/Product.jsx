@@ -288,7 +288,7 @@ const Product = ({ product, loading, error }) => {
                 <div className="standard_down_line"></div>
                 <div className="price_section">
                   <p>Price ${price}/unit</p>
-                  <p>$1000.00</p>
+                  <p>${(orderQuantity * price).toFixed(2)}</p>
                 </div>
                 <div className="add_to_bulk_container">
                   <button>Add to bulk estimate</button>
