@@ -77,7 +77,7 @@ const SecondaryHeader = () => {
         </span>
         <div className="container_1">
           <div className="header_logo">
-            <Image src={logo} width={220} height={50} alt="search" />
+            <Image src={logo} width={220} height={50} alt="search" onClick={() => router.push("/home")} style={{cursor: "pointer"}} />
           </div>
         </div>
         <>
@@ -320,7 +320,7 @@ const SecondaryHeader = () => {
           </div>
 
           {screenSize > 767 && (
-            <div className="">
+            <div className="" onClick={() => router.push("/cart")} style={{cursor: "pointer"}}>
               <Image
                 src={heartImg}
                 width={29}
@@ -330,7 +330,7 @@ const SecondaryHeader = () => {
               />
             </div>
           )}
-          <div className="" onClick={() => router.push("/cart")}>
+          <div className="" onClick={() => router.push("/cart")} style={{cursor: "pointer"}}>
             <Image
               src={cartImg}
               width={27}

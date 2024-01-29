@@ -86,6 +86,7 @@ const Auth = () => {
       alert("success user");
     }
   };
+
   return (
     <div className="login_wrapper">
       <div className="login_container">
@@ -134,7 +135,7 @@ const Auth = () => {
             <div class="input_box">
               <button
                 type="submit"
-                disabled={totalValues}
+                disabled={!totalValues}
                 onClick={handleSubmit}
               >
                 Login
