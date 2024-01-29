@@ -70,7 +70,7 @@
 
 .filterPanel {
   width: 400px;
-  margin-top: 2.9rem;
+  margin-top: 2.5rem;
   border: 1px solid #d8d8d8;
   border-radius: 30px;
 }
@@ -226,6 +226,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   transition: 0.3s all ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 .category-section .filter_Container {
@@ -235,11 +237,23 @@
 .category-section .collection_wrapper {
   width: 100%;
   transition: 0.3s all ease-in-out;
-  max-width: 67%;
+  max-width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  margin-left: 33%;
 }
 .category-section .filter-panel-wrap {
   width: 100%;
-  max-width: 32%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  transition: 0.3s all ease-in-out;
+  position: absolute;
+  top: 80px;
+  transform: translateX(0);
+}
+.filter-panel-wrap {
+  transform: translateX(-380px);
   transition: 0.3s all ease-in-out;
 }
 .category-section .collection_container {
@@ -283,16 +297,18 @@
     grid-template-columns: repeat(3, 1fr) !important;
   }
   .category-section .collection_wrapper {
-    max-width: 63% !important;
+    max-width: 73% !important;
+    margin-left: 34%;
   }
+
   .filterPanel_list {
     column-gap: 0 !important;
   }
 }
 @media only screen and (max-width: 991px) {
-  .category-section .collection_wrapper {
-    max-width: 64% !important;
-  }
+  .category-section {
+    overflow: unset;
+}
   .textContent_title {
     font-size: 21.943px !important;
     line-height: 33.075px !important;
@@ -300,6 +316,30 @@
   .collection_Single p {
     font-size: 19px !important;
   }
+  .category-section .filter-panel-wrap {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    overflow: scroll;
+    height: 100vh;
+}
+.category-section .filter-panel-wrap .filterPanel {
+  margin-top: 0px;
+}
+.category-section .filter-panel-wrap  .filterPanel {
+  width: 100%;
+}
+.category-section .filter-panel-wrap .filterPanel_title {
+  margin: 25px auto 16px 0px;
+}
+.category-section .filter-panel-wrap .filterPanel_Product_Section {
+  margin: 27px 21px 16px 0px;
+}
+.category-section .filter-panel-wrap .filterPanel_list {
+  padding: 1.5rem 0px;
+}
 }
 @media only screen and (max-width: 850px) {
   .filterPanel {
