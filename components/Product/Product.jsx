@@ -8,7 +8,7 @@ import Dot from "../custom-colored-dot/Dot";
 
 const Product = ({ product, loading, error }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [orderQuantity, setOrderQuantity] = useState(+product?.column_1_qty);
+  const [orderQuantity, setOrderQuantity] = useState(+product?.column_1_qty || 200);
   const [price, setPrice] = useState(0);
   const [productData, setProductData] = useState(null);
 
