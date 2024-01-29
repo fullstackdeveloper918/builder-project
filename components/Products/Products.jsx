@@ -15,7 +15,7 @@ const Products = ({ response, error, loading }) => {
 
   return (
     <>
-      <div className="collection_wrapper">
+      <div className="collection_wrapper" style={{marginBottom: "30px"}}>
         <div className="collection_container">
           <div className="collection_Single">
             <div className="imgContent">
@@ -102,7 +102,7 @@ const Products = ({ response, error, loading }) => {
                 />
               </svg>
               <div className="checkbtn">
-                <button>check out</button>
+                <button>check it out</button>
               </div>
             </div>
           </div>
