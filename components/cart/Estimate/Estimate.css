@@ -27,32 +27,6 @@
   background-color: rgba(162, 208, 97, 0.5);
 }
 
-.cart_left_desc {
-  color: #000;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px; /* 100% */
-  letter-spacing: 0.16px;
-  margin: 40px 0 14px;
-}
-
-.cart_left_radio_buttons {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.6rem;
-}
-
-.cart_left_btn {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
 .form_inputs {
   width: 100%;
   height: 60px;
@@ -228,35 +202,6 @@
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
-}
-
-.cart_left_butttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 3.8rem;
-}
-
-.cart_left_butttons .button {
-  width: 111px;
-  height: 57px;
-  border-radius: 130px;
-  border: 1px solid var(--green, #a2d061);
-  background: rgba(162, 208, 97, 0.2);
-  color: var(--green, #a2d061);
-  text-align: center;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.5px;
-}
-
-.cart_left_butttons button:nth-child(2) {
-  background: var(--green, #a2d061);
-  width: 161px;
-  color: #fff;
 }
 
 /* Right Section */

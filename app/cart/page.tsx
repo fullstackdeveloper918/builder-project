@@ -1,5 +1,5 @@
 import React from "react";
-import Estimate from "./../../components/Estimate/Estimate";
+import Estimate from "../../components/cart/Estimate/Estimate";
 
 const page = () => {
   return (
