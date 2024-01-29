@@ -6,6 +6,9 @@ p, div, span {
 }
 .top-bar {
   background-color: #a2d061;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .primary-header-container {
   display: flex;
