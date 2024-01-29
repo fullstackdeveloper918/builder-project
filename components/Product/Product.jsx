@@ -16,10 +16,10 @@ const Product = ({ product, loading, error }) => {
   const [custumize, setCustomize] = useState('No Decoration')
 const [activeColor, setActiveColor] = useState()
   const [sizeQuantity, setSizeQuantity] = useState({
-    S: 20,
-    M: 20,
-    L: 20,
-    XL: 200,
+    S: 25,
+    M: 25,
+    L: 25,
+    XL: 25,
   })
 
   useEffect(() => {
@@ -260,7 +260,7 @@ const customisazionPrice = custumize === 'Embroidery' ? 2 :  custumize === 'Full
                     How many areas of the product would you like to add a logo
                     to?
                   </p>
-                  <input type="text" className="input" placeholder="3" />
+                  <input type="number" className="input" placeholder="3" />
                 </div>
                 <div className="para_text">
                   <p>Select location from the dropdown below</p>
