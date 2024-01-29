@@ -48,7 +48,12 @@ const StackCards = () => {
             {Stack_Card_Data.map((card) => (
               <div key={card.ID} className={`stack_card-${card.ID}`}>
                 <Image src={card.src} alt="Stack_Card_Image" />
-                <button>{card.btn}</button>
+                <span>{card.btn}</span>
+                <div className="bottom-card-content">
+                  <h3>Cup design</h3>
+                  <p>Lorem Ipsum is typesetting industry.</p>
+                  <button>View Products</button>
+                </div>
               </div>
             ))}
           </div>
