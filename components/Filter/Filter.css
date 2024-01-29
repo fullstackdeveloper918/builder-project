@@ -328,86 +328,87 @@
   /* .collection_Single {
   min-height: 468px;
 } */
-  .filter_Container.scrolled {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    padding: 10px 0;
-    z-index: 999;
-  }
-  .filter_Container.scrolled + .filter-panel-wrap {
-    position: sticky;
-    top: 10px;
-    background: #fff;
-    z-index: 9;
-    overflow-y: scroll;
-    /* height: 400px; */
-  }
-  .filterPanel {
-    width: 100% !important;
-    height: 400px;
-  }
-  .filter_select {
-    position: absolute;
-    right: 0;
-    width: 48%;
-    top: 1px;
-  }
-  .filter_input {
-    flex-shrink: 0;
-    width: 100%;
-  }
-  .filter__btn {
-    width: 48%;
-    text-align: left;
-    display: flex;
-    justify-content: center;
-    padding: 12px;
-  }
-  .filter_Container {
-    display: flex !important;
-    width: 100% !important;
-    height: auto !important;
-    flex-wrap: wrap !important;
-    position: relative;
-  }
-  .filter_select > select {
-    border: none;
-    background: transparent;
-    padding: 12px;
-  }
-  .filter_input > input {
-    padding: 12px;
-  }
-  .pagination_content {
-    width: auto !important;
-    gap: 20px !important;
-    padding: 1rem;
-  }
-  .filterPanel {
-    width: 100% !important;
-    height: 400px;
-    margin: 30px 0;
-  }
+.filter_Container.scrolled {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 10px 0;
+  z-index: 999;
+}
+.filter_Container.scrolled +  .filter-panel-wrap {
+  position: sticky;
+  top: 10px;
+  background: #fff;
+  z-index: 9;
+  overflow-y: scroll;
+  /* height: 400px; */
+}
+.filterPanel {
+  width: 100% !important;
+  height: 400px;
+}
+.filter_select {
+  position: absolute;
+  right: 0;
+  width: 48%;
+  top: 1px;
+}
+.filter_input {
+  flex-shrink: 0;
+  width: 100%;
+}
+.filter__btn {
+  width: 48%;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+.filter_Container {
+  display: flex !important;
+  width: 100% !important;
+  height: auto !important;
+  flex-wrap: wrap !important;
+  position: relative;
+}
+.filter_select > select {
+  border: none;
+  background: transparent;
+  padding: 12px;
+}
+.filter_input > input {
+  padding: 12px;
+}
+.pagination_content {
+  width: auto !important;
+  gap: 20px !important;
+  padding: 1rem;
+}
+.filterPanel {
+  width: 100% !important;
+  height: 400px;
+  margin: 30px 0;
+}
 }
 
-@media only screen and (max-width: 576px) {
+
+@media only screen and (max-width: 576px  ) {
   .collection_Single {
     flex-direction: column;
     padding: 2rem !important;
-  }
-  .collection_Single {
-    flex-direction: column;
-  }
-  .collection_Single > .textContent,
-  .collection_Single > .imgContent {
-    flex: 1;
-    width: 100% !important;
-  }
-  .collection_Single .imgContent img.img {
-    width: 100%;
-    max-width: 195px !important;
-    height: auto;
-    margin: 0 auto;
-  }
+}
+.collection_Single {
+  flex-direction: column;
+}
+.collection_Single > .textContent , .collection_Single > .imgContent{
+  flex: 1;
+  width: 100% !important;
+}
+.collection_Single .imgContent img.img {
+  width: 100%;
+  max-width: 195px !important;
+  height: auto;
+  margin: 0 auto;
+}
+
 }
