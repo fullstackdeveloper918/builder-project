@@ -1,12 +1,11 @@
-// import React from "react";
-// import Login from "../../../components/login/Auth";
+import React from "react";
 
-// const page = () => {
-//   return (
-//     <>
-//       <Login />
-//     </>
-//   );
-// };
+const page = () => {
+  return (
+    <>
+      "login"
+    </>
+  );
+};
 
-// export default page;
+export default page;
