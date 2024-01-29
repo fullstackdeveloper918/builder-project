@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import images from "../../constants/images";
 import { toast } from "react-toastify";
-import { Formik } from "formik";
 import "react-toastify/dist/ReactToastify.css";
 
 const Auth = () => {
