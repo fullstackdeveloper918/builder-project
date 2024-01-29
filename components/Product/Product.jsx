@@ -242,6 +242,17 @@ const customisazionPrice = custumize === 'Embroidery' ? 2 :  custumize === 'Full
                       ))}
                   </div>
                 </div>
+                <div className="cart_left_swift">
+              <p>Swift swag?</p>
+              <div className="cart_left_swift_content">
+                <input type="checkbox" name="" id="" />
+                <p>
+                  Checking this box will override the date selected above to
+                  within 10 business days if you have gone through the Swift
+                  Swag process. Please note additional charges will apply.
+                </p>
+              </div>
+            </div>
                 <div className="customization_text">
                   <p>Select Customization</p>
                   <div className="buttons">
