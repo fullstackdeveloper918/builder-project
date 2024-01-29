@@ -42,8 +42,7 @@ span {
 
 .collection_items:hover {
   cursor: pointer;
-  border-radius: 21.938px;
-  border: 2.194px solid var(--green, #a2d061);
+  border-color: #a2d061;
   background: #fff;
   box-shadow: 0px 3.344px 20.066px 0px rgba(0, 0, 0, 0.06);
 }
