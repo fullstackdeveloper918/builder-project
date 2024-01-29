@@ -46,32 +46,32 @@ const Product = ({ product, loading, error }) => {
     if (orderQuantity <= product?.column_1_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_1_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_1_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_1_retail_price_usd
+          : product?.column_1_retail_price_cad
       );
     } else if (orderQuantity <= product?.column_2_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_2_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_2_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_2_retail_price_usd
+          : product?.column_2_retail_price_cad
       );
     } else if (orderQuantity <= product?.column_3_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_3_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_3_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_3_retail_price_usd
+          : product?.column_3_retail_price_cad
       );
     } else if (orderQuantity <= product?.column_4_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_4_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_4_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_4_retail_price_usd
+          : product?.column_4_retail_price_cad
       );
     } else if (orderQuantity > product?.column_4_q) {
       setPrice(
         country === "usa"
-          ? product?.column_5_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_5_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_5_retail_price_usd
+          : product?.column_5_retail_price_cad
       );
     }
   };
@@ -261,16 +261,14 @@ const Product = ({ product, loading, error }) => {
                 </div>
                 <div className="select_size_quantity">
                   <p>Select sizes quantity</p>
-                  {product?.product_dimensions?.sizes && (
-                    <div className="inputs">
-                      {product?.product_dimensions?.sizes?.map((p) => (
-                        <button>{p}</button>
-                      ))}
-                    </div>
-                  )}
-                  {product?.product_dimensions?.other && (
-                    <div>{product?.product_dimensions?.other}</div>
-                  )}
+                  <div className="inputs">
+                    <input type="text" placeholder="XS" />
+                    <input type="text" placeholder="S" />
+                    <input type="text" placeholder="M" />
+                    <input type="text" placeholder="L" />
+                    <input type="text" placeholder="XL" />
+                    <input type="text" placeholder="2XL" />
+                  </div>
                 </div>
                 <div className="standard_business_section">
                   <p>Production time</p>
@@ -279,7 +277,7 @@ const Product = ({ product, loading, error }) => {
                 <div className="standard_down_line"></div>
                 <div className="price_section">
                   <p>Price ${price}/unit</p>
-                  <p>${price * orderQuantity}</p>
+                  <p>$1000.00</p>
                 </div>
                 <div className="add_to_bulk_container">
                   <button>Add to bulk estimate</button>

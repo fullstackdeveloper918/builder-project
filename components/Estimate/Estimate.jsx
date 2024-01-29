@@ -26,11 +26,19 @@ const Estimate = () => {
           <p className="cart_left_desc">Are you a...</p>
           <div className="cart_left_radio_buttons">
             <div className="cart_left_btn">
-              <input type="radio" className="cart_left_radio_btn" />
+              <input
+                type="radio"
+                className="cart_left_radio_btn"
+                name="client"
+              />
               <span className="cart_left_text">Existing Client</span>
             </div>
             <div className="cart_left_btn">
-              <input type="radio" className="cart_left_radio_btn" />
+              <input
+                type="radio"
+                className="cart_left_radio_btn"
+                name="client"
+              />
               <span className="cart_left_text">New Client</span>
             </div>
           </div>
@@ -70,28 +78,32 @@ const Estimate = () => {
             </div>
             <div className="cart_left_interested_section">
               <p>Are you interested in additional services?</p>
-              <div className="cart_left_interested_section_inputs">
-                <div>
+              <div className="cart_left_interested_section_fields">
+                <div className="inputs">
                   <input type="radio" name="" id="" />
                   <h6>Swag Pack Kitting</h6>
                 </div>
-                <div>
+                <div className="inputs">
                   <input type="radio" name="" id="" />
                   <h6>Warehousing</h6>
                 </div>
-                <div>
+                <div className="inputs">
                   <input type="radio" name="" id="" />
                   <h6>Graphic Design</h6>
                 </div>
-                <div>
+                <div className="inputs">
                   <input type="radio" name="" id="" />
                   <h6>Pick and Pack</h6>
                 </div>
-                <div>
+                <div className="inputs">
                   <input type="radio" name="" id="" />
                   <h6>Not Sure</h6>
                 </div>
               </div>
+            </div>
+            <div className="cart_left_butttons">
+              <button className="button">Back</button>
+              <button className="button">Continue</button>
             </div>
           </div>
         </div>
