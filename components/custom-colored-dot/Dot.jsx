@@ -1,18 +1,17 @@
 import { useState } from "react";
 import "./index.css";
-const Dot = ({ color }) => {
+const Dot = ({ color,activeColor, setActiveColor }) => {
   const [outline, setOutline] = useState(false);
 
-  const btnClicked = (index) => {
-    setOutline(true);
-    console.log(index);
+  const btnClicked = () => {
+    setActiveColor(color)
   };
 
   return (
     <div
-      className={`colored_dot ${outline ? "active" : ""}`}
-      style={{ outlineColor: color }}
-      onClick={() => btnClicked(color.id)}
+      className={`colored_dot ${color === activeColor ? "active" : ""}`}
+      style={{ background: color }}
+      onClick={btnClicked}
     />
   );
 };

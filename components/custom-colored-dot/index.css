@@ -9,5 +9,6 @@
 }
 
 .colored_dot.active {
-  outline-color: #d0d0cc;
+  outline-color: red;
+  outline-offset: 3px;
 }

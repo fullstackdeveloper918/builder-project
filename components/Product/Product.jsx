@@ -13,9 +13,8 @@ const Product = ({ product, loading, error }) => {
   );
   const [price, setPrice] = useState(0);
   const [activeBtn, setActiveBtn] = useState(2);
-  const [activesize, setActiveSize] = useState(0);
   const [custumize, setCustomize] = useState('No Decoration')
-  const [finalPrice, setFinalPrice] = useState(0)
+const [activeColor, setActiveColor] = useState()
   const [sizeQuantity, setSizeQuantity] = useState({
     S: 20,
     M: 20,
@@ -238,7 +237,7 @@ const customisazionPrice = custumize === 'Embroidery' ? 2 :  custumize === 'Full
                     {colors &&
                       colors.map((color, index) => (
                         <>
-                          <Dot color={color} key={index} />
+                          <Dot color={color} key={index} activeColor={activeColor} setActiveColor={setActiveColor} />
                         </>
                       ))}
                   </div>
