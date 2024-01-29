@@ -8,9 +8,13 @@ import Dot from "../custom-colored-dot/Dot";
 
 const Product = ({ product, loading, error }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [orderQuantity, setOrderQuantity] = useState(+product?.column_1_qty || 200);
+  const [orderQuantity, setOrderQuantity] = useState(
+    +product?.column_1_qty || 200
+  );
   const [price, setPrice] = useState(0);
   const [productData, setProductData] = useState(null);
+  const [activeBtn, setActiveBtn] = useState(0);
+  const [activesize, setActiveSize] = useState(0);
 
   const slides = [
     { url: images.shirt_small },
@@ -88,7 +92,18 @@ const Product = ({ product, loading, error }) => {
 
   const colors = product?.colours?.split(",");
 
-  console.log(product?.product_dimensions, 'product')
+  console.log(product?.product_dimensions, "product");
+
+  const buttons = ["Embroidery", "Full Color Decoration", "No Decoration"];
+
+  const btnClicked = (index, type) => {
+    if (type === "button") {
+      setActiveBtn(index);
+    }
+    if (type === "size") {
+      setActiveSize(index);
+    }
+  };
 
   return (
     <>
@@ -196,9 +211,14 @@ const Product = ({ product, loading, error }) => {
                 <div className="customization_text">
                   <p>Select Customization</p>
                   <div className="buttons">
-                    <button className="btn">Embroidery</button>
-                    <button className="btn">Full Color Decoration</button>
-                    <button className="btn">No Decoration</button>
+                    {buttons.map((button, index) => (
+                      <button
+                        className={`btn ${activeBtn === index ? "active" : ""}`}
+                        onClick={() => btnClicked(index, "button")}
+                      >
+                        {button}
+                      </button>
+                    ))}
                   </div>
                 </div>
                 <div className="para_text">
@@ -211,11 +231,11 @@ const Product = ({ product, loading, error }) => {
                 <div className="para_text">
                   <p>Select location from the dropdown below</p>
                   <div className="inputs">
-                    <div className>
+                    <div>
                       <input
                         type="radio"
                         id="html"
-                        name="fav_language"
+                        name="location"
                         value="HTML"
                       />
                         <label for="html">Front</label>
@@ -225,7 +245,7 @@ const Product = ({ product, loading, error }) => {
                       <input
                         type="radio"
                         id="css"
-                        name="fav_language"
+                        name="location"
                         value="CSS"
                       />
                         <label for="css">Back</label>
@@ -234,7 +254,7 @@ const Product = ({ product, loading, error }) => {
                       <input
                         type="radio"
                         id="javascript"
-                        name="fav_language"
+                        name="location"
                         value="JavaScript"
                       />
                         <label for="javascript">Left Sleeve</label>
@@ -275,15 +295,19 @@ const Product = ({ product, loading, error }) => {
                 <div className="select_size_quantity">
                   <p>Select sizes quantity</p>
                   <div className="inputs">
-                    {product?.product_dimensions?.other === null &&(
-                      product?.product_dimensions?.sizes?.map((s) => (
-                        <button>{s}</button>
-                      ))
-                    )}
-                    {product?.product_dimensions?.sizes === null &&(
-                      product?.product_dimensions?.other
-                    )}
-                    
+                    {product?.product_dimensions?.other === null &&
+                      product?.product_dimensions?.sizes?.map((s, index) => (
+                        <button
+                          className={`btn ${
+                            activesize === index ? "active" : ""
+                          }`}
+                          onClick={() => btnClicked(index, "size")}
+                        >
+                          {s}
+                        </button>
+                      ))}
+                    {product?.product_dimensions?.sizes === null &&
+                      product?.product_dimensions?.other}
                   </div>
                 </div>
                 <div className="standard_business_section">
