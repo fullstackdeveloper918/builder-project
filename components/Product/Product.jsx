@@ -12,9 +12,38 @@ const Product = ({ product, loading, error }) => {
     +product?.column_1_qty || 200
   );
   const [price, setPrice] = useState(0);
-  const [productData, setProductData] = useState(null);
-  const [activeBtn, setActiveBtn] = useState(0);
+  const [activeBtn, setActiveBtn] = useState(2);
   const [activesize, setActiveSize] = useState(0);
+  const [custumize, setCustomize] = useState('No Decoration')
+  const [finalPrice, setFinalPrice] = useState(0)
+  const [sizeQuantity, setSizeQuantity] = useState({
+    S: 20,
+    M: 20,
+    L: 20,
+    XL: 200,
+  })
+
+  useEffect(() => {
+   let total = +sizeQuantity.S + +sizeQuantity.M + +sizeQuantity.L + +sizeQuantity.XL
+   setOrderQuantity(total)
+  }, [sizeQuantity])
+
+  let handleQuantitySize = (e) => {
+    if(e.target.value <0){
+      setSizeQuantity((prev) => ({
+        ...prev,
+        [e.target.name]: 0
+      }))
+    }else{
+      setSizeQuantity((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value
+      }))
+    }
+  
+  }
+
+
 
   const slides = [
     { url: images.shirt_small },
@@ -92,18 +121,24 @@ const Product = ({ product, loading, error }) => {
 
   const colors = product?.colours?.split(",");
 
-  console.log(product?.product_dimensions, "product");
 
-  const buttons = ["Embroidery", "Full Color Decoration", "No Decoration"];
+  const customizations = ["Embroidery", "Full Color Decoration", "No Decoration"];
 
-  const btnClicked = (index, type) => {
-    if (type === "button") {
+  const btnClicked = (index, val) => {
+   if(val === "Embroidery"){
+    setCustomize("Embroidery")
+   }else if(val === "Full Color Decoration"){
+    setCustomize("Full Color Decoration")
+   } else if(val === "No Decoration"){
+    setCustomize("No Decoration")
+   }
       setActiveBtn(index);
-    }
-    if (type === "size") {
-      setActiveSize(index);
-    }
   };
+
+const customisazionPrice = custumize === 'Embroidery' ? 2 :  custumize === 'Full Color Decoration' ? 4 : 0
+
+
+
 
   return (
     <>
@@ -211,10 +246,10 @@ const Product = ({ product, loading, error }) => {
                 <div className="customization_text">
                   <p>Select Customization</p>
                   <div className="buttons">
-                    {buttons.map((button, index) => (
+                    {customizations.map((button, index) => (
                       <button
                         className={`btn ${activeBtn === index ? "active" : ""}`}
-                        onClick={() => btnClicked(index, "button")}
+                        onClick={() => btnClicked(index, button)}
                       >
                         {button}
                       </button>
@@ -287,7 +322,7 @@ const Product = ({ product, loading, error }) => {
                     name="orderQuantity"
                     value={orderQuantity}
                     onChange={setQuantity}
-                    disabled={!product}
+                    disabled
                     min={+product?.column_1_qty}
                   />
                   <span>(minimum {+product?.column_1_qty} units required)</span>
@@ -295,19 +330,15 @@ const Product = ({ product, loading, error }) => {
                 <div className="select_size_quantity">
                   <p>Select sizes quantity</p>
                   <div className="inputs">
-                    {product?.product_dimensions?.other === null &&
-                      product?.product_dimensions?.sizes?.map((s, index) => (
-                        <button
-                          className={`btn ${
-                            activesize === index ? "active" : ""
-                          }`}
-                          onClick={() => btnClicked(index, "size")}
-                        >
-                          {s}
-                        </button>
-                      ))}
-                    {product?.product_dimensions?.sizes === null &&
-                      product?.product_dimensions?.other}
+                   
+
+
+                      <input placeholder="S" type="number" name="S" value={sizeQuantity.S} onChange={handleQuantitySize} min="0"  />
+                      <input placeholder="M" type="number" name="M" value={sizeQuantity.M} onChange={handleQuantitySize} min="0" />
+                      <input placeholder="L" type="number" name="L" value={sizeQuantity.L} onChange={handleQuantitySize} min="0" />
+                      <input placeholder="XL" type="number" name="XL" value={sizeQuantity.XL} onChange={handleQuantitySize} min="0" />
+                    {/* {product?.product_dimensions?.sizes === null &&
+                      product?.product_dimensions?.other} */}
                   </div>
                 </div>
                 <div className="standard_business_section">
@@ -316,8 +347,8 @@ const Product = ({ product, loading, error }) => {
                 </div>
                 <div className="standard_down_line"></div>
                 <div className="price_section">
-                  <p>Price ${price}/unit</p>
-                  <p>${(orderQuantity * price).toFixed(2)}</p>
+                  <p>{`Price ${+price + +customisazionPrice}/unit`}</p>
+                  <p>${(orderQuantity * (+price + +customisazionPrice)).toFixed(2)}</p>
                 </div>
                 <div className="add_to_bulk_container">
                   <button>Add to bulk estimate</button>
