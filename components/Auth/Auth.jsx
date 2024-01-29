@@ -4,7 +4,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import images from "../../constants/images";
 import { toast } from "react-toastify";
-import { Formik } from "formik";
 import "react-toastify/dist/ReactToastify.css";
 
 const Auth = () => {
@@ -19,6 +18,9 @@ const Auth = () => {
     password: "",
   });
   const [isBlur, setIsBlur] = useState(false);
+
+  const totalValues =
+    Boolean(values.email) && Boolean(values.password) && Boolean(values.radio);
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
@@ -84,6 +86,7 @@ const Auth = () => {
       alert("success user");
     }
   };
+
   return (
     <div className="login_wrapper">
       <div className="login_container">
@@ -99,6 +102,7 @@ const Auth = () => {
           <form className="login_form">
             <div class="input_box">
               <input
+                name="email"
                 type="text"
                 placeholder="Enter email"
                 required
@@ -111,6 +115,7 @@ const Auth = () => {
             </div>
             <div class="input_box">
               <input
+                name="password"
                 type="password"
                 placeholder="Enter password"
                 required
@@ -122,13 +127,19 @@ const Auth = () => {
               {isBlur && <span className="error">{error.password}</span>}
             </div>
             <div className="input_radio_content">
-              <input type="radio" onChange={handleChange} />
+              <input type="radio" name="radio" onChange={handleChange} />
               <p>
                 I agree to the <a>terms & conditions | privacy policy</a>
               </p>
             </div>
-            <div class="input_box button">
-              <input type="submit" value="Login" />
+            <div class="input_box">
+              <button
+                type="submit"
+                disabled={!totalValues}
+                onClick={handleSubmit}
+              >
+                Login
+              </button>
             </div>
           </form>
         </div>
