@@ -53,7 +53,7 @@ form .input_box {
 
 .input_box button {
   margin-top: 2.7rem;
-  padding-left: 0;
+  padding: 1rem 0;
   border-radius: 130px;
   background: var(--green, #a2d061);
   color: #fff;
@@ -65,8 +65,7 @@ form .input_box {
   transition: all 0.3s linear;
 }
 
-.input_box button:disabled,
-.input_box button[disabled] {
+.input_box button:disabled {
   cursor: default;
   opacity: 0.5;
 }

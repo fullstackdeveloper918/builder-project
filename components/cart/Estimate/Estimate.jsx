@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ClientTypeSelector from "../../ClientTypeSelector/ClientTypeSelector";
+import QuotationSubmissionHeader from "../../QuotationSubmissionHeader/QuotationSubmissionHeader";
 import "./Estimate.css";
 import Button from "../../../components/Button/Button";
 import EstimateCard from "../../EstimateCard/EstimateCard";
@@ -11,12 +12,8 @@ const Estimate = () => {
       <section className="cart_section">
         {/* Left Section  */}
         <div className="cart_left">
-          {/* Component home */}
-          <h4>Home {">"} Submit Quotation Request</h4>
-          <div className="horizontal_line"></div>
-          {/* component home ends here */}
+          <QuotationSubmissionHeader />
           <ClientTypeSelector />
-          {/* client type selector */}
           <form className="form">
             <div className="form_inputs">
               <input

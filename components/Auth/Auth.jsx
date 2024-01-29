@@ -134,7 +134,7 @@ const Auth = () => {
             <div class="input_box">
               <button
                 type="submit"
-                disabled={totalValues}
+                disabled={!totalValues}
                 onClick={handleSubmit}
               >
                 Login

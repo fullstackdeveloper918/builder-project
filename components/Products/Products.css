@@ -65,7 +65,7 @@ span {
 }
 .collection_Single p {
   color: #111;
-  font-family: '__DM_Sans_ae0b6a';
+  font-family: "__DM_Sans_ae0b6a";
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -94,7 +94,6 @@ span {
   position: relative;
 }
 
-
 .collection_Single > .textContent {
   flex: 1;
   width: 50%;
@@ -102,89 +101,14 @@ span {
 
 .textContent_title {
   color: #111;
-  font-family: '__DM_Sans_ae0b6a';
+  font-family: "__DM_Sans_ae0b6a";
   font-size: 28.943px;
   font-style: normal;
   font-weight: 500;
   line-height: 40.075px;
   margin-bottom: 20px;
 }
-
-.collection_items {
-  position: relative;
-  padding:2rem;
-  width: 100%;
-  transition: all 0.5s ease;
-}
-
-.collection_items > img {
-  height: auto;
-  width: 100%;
-}
-
-.product_content {
-  width: 100%;
-  text-align: center;
-}
-
-.product_content > .title {
-  width: 80%;
-  margin: 0 auto 0.7rem;
-  color: #111;
-  text-align: center;
-  font-family: '__DM_Sans_ae0b6a';
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 29.238px;
-}
-
-.product_content > .small_text {
-  width: 40%;
-  margin: 0 auto;
-  color: #111;
-  font-family: '__DM_Sans_ae0b6a';
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.14px;
-}
-
-.product_content > .colors {
-  margin-top: 1rem;
-}
-
-.hidden_icons {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  justify-content: center;
-  align-items: center;
-  display: none;
-  transition: all 0.3s ease;
-}
-
-.hidden_icons > .btn {
-  color: #fff;
-  text-align: center;
-  font-family: Poppins;
-  font-size: 17.55px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.176px;
-  width: 162px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: 142.594px;
-  border: 1px solid #a2d061;
-  background: #a2d061;
-  transform: scale(0);
-  opacity: 0;
-  transition: opacity 0.6s ease, scale 1s ease;
-}
+/* Product Card */
 
 .collection_items:hover .hidden_icons {
   display: flex;

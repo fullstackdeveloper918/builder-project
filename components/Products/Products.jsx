@@ -9,6 +9,7 @@ import useFetch from "../../lib/useFetch";
 import Dot from "./../custom-colored-dot/Dot";
 import { useRouter } from "next/navigation";
 import Loaders from "../../components/loaders/Loaders";
+import ProductCard from "../ProductCard/ProductCard";
 
 const Products = ({ response, error, loading }) => {
   const router = useRouter();
@@ -26,7 +27,6 @@ const Products = ({ response, error, loading }) => {
                 alt="cup"
                 className="img"
               />
-          
             </div>
             <div className="textContent">
               <h4 className="textContent_title">
@@ -106,50 +106,16 @@ const Products = ({ response, error, loading }) => {
               </div>
             </div>
           </div>
-         
-       
-      {response?.data?.data.map((item) => (
-        <>
-          <div
-            className="collection_items"
-            onClick={() => router.push(`products/${item?.id}`)}
-          >
-            <Image
-              src={item?.image}
-              width={278}
-              height={311}
-              alt="products_images"
-            />
-            <div className="product_content">
-              <h4 className="title">{item?.product_title}</h4>
-              <div className="small_text">
-                as low as ${item?.unit_price || 0}
-              </div>
-              <div className="colors">
-                {item.colours.split(",").map((c) => {
-                  return (
-                    <>
-                      <Dot color={c} />
-                    </>
-                  );
-                })}
-              </div>
-            </div>
 
-            <div
-              className="hidden_icons"
-              onClick={() => router.push(`products/${item?.id}`)}
-            >
-              <button className="btn">View Product</button>
-            </div>
-          </div>
-        </>
-      ))}
-    
-    </div>
+          {response?.data?.data.map((item) => (
+            <>
+              <ProductCard item={item} key={item.id} />
+            </>
+          ))}
+        </div>
       </div>
     </>
-  )}
-  
+  );
+};
 
 export default Products;
