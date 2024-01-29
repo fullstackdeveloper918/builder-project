@@ -13,6 +13,7 @@ span {
 .collection_wrapper {
   width: 100%;
   margin-top: 2.5rem;
+  transition: 0.3s all ease-in-out;
 }
 
 .collection_container {
