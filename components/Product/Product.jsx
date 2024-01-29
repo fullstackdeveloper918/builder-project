@@ -8,7 +8,7 @@ import Dot from "../custom-colored-dot/Dot";
 
 const Product = ({ product, loading, error }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [orderQuantity, setOrderQuantity] = useState(0);
+  const [orderQuantity, setOrderQuantity] = useState(+product?.column_1_qty || 200);
   const [price, setPrice] = useState(0);
   const [productData, setProductData] = useState(null);
 
@@ -18,6 +18,16 @@ const Product = ({ product, loading, error }) => {
     { url: images.Stack_Card2 },
     { url: images.Stack_Card1 },
   ];
+
+  useEffect(() => {
+    const getData = setTimeout(() => {
+      if (orderQuantity < product?.column_1_qty) {
+        setOrderQuantity(+product?.column_1_qty);
+      }
+    }, 2000);
+
+    return () => clearTimeout(getData);
+  }, [orderQuantity]);
 
   const goToPrev = () => {
     const isFirstSlide = currentIndex === 0;
@@ -46,32 +56,32 @@ const Product = ({ product, loading, error }) => {
     if (orderQuantity <= product?.column_1_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_1_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_1_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_1_retail_price_usd.replace(/[^0-9.]/g, "")
+          : product?.column_1_retail_price_cad.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity <= product?.column_2_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_2_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_2_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_2_retail_price_usd.replace(/[^0-9.]/g, "")
+          : product?.column_2_retail_price_cad.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity <= product?.column_3_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_3_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_3_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_3_retail_price_usd.replace(/[^0-9.]/g, "")
+          : product?.column_3_retail_price_cad.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity <= product?.column_4_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_4_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_4_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_4_retail_price_usd.replace(/[^0-9.]/g, "")
+          : product?.column_4_retail_price_cad.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity > product?.column_4_q) {
       setPrice(
         country === "usa"
-          ? product?.column_5_retail_price_usd.replace(/[^0-9.]/g, '')
-          : product?.column_5_retail_price_cad.replace(/[^0-9.]/g, '')
+          ? product?.column_5_retail_price_usd.replace(/[^0-9.]/g, "")
+          : product?.column_5_retail_price_cad.replace(/[^0-9.]/g, "")
       );
     }
   };
@@ -251,26 +261,25 @@ const Product = ({ product, loading, error }) => {
                 <div className="input_data_required">
                   <input
                     type="number"
-                    placeholder="50"
+                    placeholder={+product?.column_1_qty}
                     name="orderQuantity"
                     value={orderQuantity}
                     onChange={setQuantity}
                     disabled={!product}
+                    min={+product?.column_1_qty}
                   />
-                  <span>(minimum 50 units required)</span>
+                  <span>(minimum {+product?.column_1_qty} units required)</span>
                 </div>
                 <div className="select_size_quantity">
                   <p>Select sizes quantity</p>
-                  {product?.product_dimensions?.sizes && (
-                    <div className="inputs">
-                      {product?.product_dimensions?.sizes?.map((p) => (
-                        <button>{p}</button>
-                      ))}
-                    </div>
-                  )}
-                  {product?.product_dimensions?.other && (
-                    <div>{product?.product_dimensions?.other}</div>
-                  )}
+                  <div className="inputs">
+                    <input type="text" placeholder="XS" />
+                    <input type="text" placeholder="S" />
+                    <input type="text" placeholder="M" />
+                    <input type="text" placeholder="L" />
+                    <input type="text" placeholder="XL" />
+                    <input type="text" placeholder="2XL" />
+                  </div>
                 </div>
                 <div className="standard_business_section">
                   <p>Production time</p>
@@ -279,7 +288,7 @@ const Product = ({ product, loading, error }) => {
                 <div className="standard_down_line"></div>
                 <div className="price_section">
                   <p>Price ${price}/unit</p>
-                  <p>${price * orderQuantity}</p>
+                  <p>${(orderQuantity * price).toFixed(2)}</p>
                 </div>
                 <div className="add_to_bulk_container">
                   <button>Add to bulk estimate</button>
