@@ -4,5 +4,9 @@
   flex-shrink: 0;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.colored_dot.active {
+  outline-color: red;
   outline-offset: 3px;
 }

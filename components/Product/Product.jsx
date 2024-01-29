@@ -13,14 +13,13 @@ const Product = ({ product, loading, error }) => {
   );
   const [price, setPrice] = useState(0);
   const [activeBtn, setActiveBtn] = useState(2);
-  const [activesize, setActiveSize] = useState(0);
   const [custumize, setCustomize] = useState("No Decoration");
-  const [finalPrice, setFinalPrice] = useState(0);
+  const [activeColor, setActiveColor] = useState();
   const [sizeQuantity, setSizeQuantity] = useState({
-    S: 20,
-    M: 20,
-    L: 20,
-    XL: 200,
+    S: 25,
+    M: 25,
+    L: 25,
+    XL: 25,
   });
 
   useEffect(() => {
@@ -241,9 +240,25 @@ const Product = ({ product, loading, error }) => {
                     {colors &&
                       colors.map((color, index) => (
                         <>
-                          <Dot color={color} key={index} index={index} />
+                          <Dot
+                            color={color}
+                            key={index}
+                            activeColor={activeColor}
+                            setActiveColor={setActiveColor}
+                          />
                         </>
                       ))}
+                  </div>
+                </div>
+                <div className="cart_left_swift">
+                  <p>Swift swag?</p>
+                  <div className="cart_left_swift_content">
+                    <input type="checkbox" name="" id="" />
+                    <p>
+                      Checking this box will override the date selected above to
+                      within 10 business days if you have gone through the Swift
+                      Swag process. Please note additional charges will apply.
+                    </p>
                   </div>
                 </div>
                 <div className="customization_text">
@@ -264,7 +279,7 @@ const Product = ({ product, loading, error }) => {
                     How many areas of the product would you like to add a logo
                     to?
                   </p>
-                  <input type="text" className="input" placeholder="3" />
+                  <input type="number" className="input" placeholder="3" />
                 </div>
                 <div className="para_text">
                   <p>Select location from the dropdown below</p>
