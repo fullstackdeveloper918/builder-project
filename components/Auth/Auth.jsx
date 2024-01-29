@@ -86,6 +86,7 @@ const Auth = () => {
       alert("success user");
     }
   };
+
   return (
     <div className="login_wrapper">
       <div className="login_container">

@@ -29,7 +29,7 @@ const page = () => {
      <section className={`container ${activeFilter ? "category-section" : ""}`}>
      <Filter activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>
      <Products response={response} loading={loading} error={error} />
-     <Pagination />
+     {/* <Pagination /> */}
    </section>
     }
      

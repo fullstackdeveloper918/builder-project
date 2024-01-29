@@ -88,6 +88,8 @@ const Product = ({ product, loading, error }) => {
 
   const colors = product?.colours?.split(",");
 
+  console.log(product?.product_dimensions, 'product')
+
   return (
     <>
       {loading ? (
@@ -273,12 +275,15 @@ const Product = ({ product, loading, error }) => {
                 <div className="select_size_quantity">
                   <p>Select sizes quantity</p>
                   <div className="inputs">
-                    <input type="text" placeholder="XS" />
-                    <input type="text" placeholder="S" />
-                    <input type="text" placeholder="M" />
-                    <input type="text" placeholder="L" />
-                    <input type="text" placeholder="XL" />
-                    <input type="text" placeholder="2XL" />
+                    {product?.product_dimensions?.other === null &&(
+                      product?.product_dimensions?.sizes?.map((s) => (
+                        <button>{s}</button>
+                      ))
+                    )}
+                    {product?.product_dimensions?.sizes === null &&(
+                      product?.product_dimensions?.other
+                    )}
+                    
                   </div>
                 </div>
                 <div className="standard_business_section">

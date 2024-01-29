@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     "app/products/[...id]/page.jsx",
     "app/products/page.jsx",
-    "app/abc/page.jsx"
+    "app/(auth)/login/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
