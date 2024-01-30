@@ -335,7 +335,7 @@
     overflow: scroll;
 }
 .category-section .filter-panel-wrap {
-  background: #fff;
+ background-color: #fff;
   z-index: 1;
 }
 .category-section .collection_wrapper {
