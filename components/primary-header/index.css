@@ -17,15 +17,16 @@ p, div, span {
   color: #fff;
   width: 100%;
   max-width: 1368px;
-  padding: 0px 15px;
+  padding: 0 15px;
   margin: 0 auto;
-  font-family: "DM Sans";
+  font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 14px; /* 100% */
-  letter-spacing: 0.14px;
+  line-height: 14px;
+  letter-spacing: .14px;
   text-transform: capitalize;
+  min-height: 45px;
 }
 .top-bar .container {
   height: 50px;

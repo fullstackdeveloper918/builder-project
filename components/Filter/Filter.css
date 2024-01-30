@@ -239,10 +239,8 @@
 .filter-panel-wrap {
   transform: translateX(-380px);
   transition: 0.3s all ease-in-out;
-  opacity: 1;
 }
 .filter-panel-wrap {
-  opacity: 0;
   transition: 0.3s all ease-in-out;
 }
 .category-section .collection_container {
@@ -287,7 +285,7 @@
   }
   .category-section .collection_wrapper {
     max-width: 73% !important;
-    margin-left: 34%;
+    margin-left: 35%;
   }
 
   .filterPanel_list {
@@ -305,29 +303,14 @@
   .collection_Single p {
     font-size: 19px !important;
   }
-  .category-section .filter-panel-wrap {
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    overflow: scroll;
-    height: 100vh;
-}
 .category-section .filter-panel-wrap .filterPanel {
   margin-top: 0px;
 }
 .category-section .filter-panel-wrap  .filterPanel {
   width: 100%;
 }
-.category-section .filter-panel-wrap .filterPanel_title {
-  margin: 25px auto 16px 0px;
-}
-.category-section .filter-panel-wrap .filterPanel_Product_Section {
-  margin: 27px 21px 16px 0px;
-}
-.category-section .filter-panel-wrap .filterPanel_list {
-  padding: 1.5rem 0px;
+.category-section .filter-panel-wrap {
+  top: 120px;
 }
 }
 @media only screen and (max-width: 850px) {
@@ -344,11 +327,21 @@
     width: 100% !important;
   }
   .category-section .filter-panel-wrap {
-    max-width: 100% !important;
-  }
-  .category-section .collection_wrapper {
-    max-width: 100% !important;
-  }
+    top: 91px;
+    height: 100vh;
+    padding: 0px 20px 0px 0px;
+    background: #fff;
+    z-index: 1;
+    overflow: scroll;
+}
+.category-section .filter-panel-wrap {
+  background: #fff;
+  z-index: 1;
+}
+.category-section .collection_wrapper {
+  max-width: 100% !important;
+  margin-left: 0px;
+}
   .collection_container {
     width: 100%;
     display: flex !important;
@@ -357,25 +350,11 @@
   /* .collection_Single {
   min-height: 468px;
 } */
-  .filter_Container.scrolled {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    padding: 10px 0;
-    z-index: 999;
-  }
-  .filter_Container.scrolled + .filter-panel-wrap {
-    position: sticky;
-    top: 10px;
-    background: #fff;
-    z-index: 9;
-    overflow-y: scroll;
-    /* height: 400px; */
-  }
   .filterPanel {
     width: 100% !important;
-    height: 400px;
-  }
+    height: 100vh;
+    overflow: scroll;
+}
   .filter_select {
     position: absolute;
     right: 0;
@@ -412,11 +391,6 @@
     width: auto !important;
     gap: 20px !important;
     padding: 1rem;
-  }
-  .filterPanel {
-    width: 100% !important;
-    height: 400px;
-    margin: 30px 0;
   }
 }
 

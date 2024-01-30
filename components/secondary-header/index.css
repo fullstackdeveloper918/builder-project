@@ -183,7 +183,7 @@ p, div, span {
 .main_container.header {
   padding: 10px 0px;
   position: sticky;
-  top: 40px;
+  top: 45px;
   background: #fff;
   z-index: 1;
   /* box-shadow: 40px 9px 44px 0px #0000000d; */
