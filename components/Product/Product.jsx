@@ -153,46 +153,48 @@ const Product = ({ product, loading, error }) => {
           <div className="detail_page_wrapper">
             <div className="detail_page_container">
               <div className="detail_page_left_top">
-                <div className="detail_page_image_content">
-                  <Image
-                    src={slides[currentIndex].url}
-                    width={400}
-                    height={560}
-                    alt="Single_Product_Image"
-                  />
-                </div>
-                <div className="images_container">
-                  <div className="img">
+                <div className="sticky_sec">
+                  <div className="detail_page_image_content">
                     <Image
-                      src={images.shirt_small}
-                      alt="Single_Product_Small_Images"
-                      width={61}
-                      height={81}
+                      src={slides[currentIndex].url}
+                      width={400}
+                      height={560}
+                      alt="Single_Product_Image"
                     />
                   </div>
-                  <div className="img">
-                    <Image
-                      src={images.shirt_small}
-                      alt="Single_Product_Small_Images"
-                      width={61}
-                      height={81}
-                    />
-                  </div>
-                  <div className="img">
-                    <Image
-                      src={images.shirt_small}
-                      alt="Single_Product_Small_Images"
-                      width={61}
-                      height={81}
-                    />
-                  </div>
-                  <div className="img">
-                    <Image
-                      src={images.shirt_small}
-                      alt="Single_Product_Small_Images"
-                      width={61}
-                      height={81}
-                    />
+                  <div className="images_container">
+                    <div className="img">
+                      <Image
+                        src={images.shirt_small}
+                        alt="Single_Product_Small_Images"
+                        width={61}
+                        height={81}
+                      />
+                    </div>
+                    <div className="img">
+                      <Image
+                        src={images.shirt_small}
+                        alt="Single_Product_Small_Images"
+                        width={61}
+                        height={81}
+                      />
+                    </div>
+                    <div className="img">
+                      <Image
+                        src={images.shirt_small}
+                        alt="Single_Product_Small_Images"
+                        width={61}
+                        height={81}
+                      />
+                    </div>
+                    <div className="img">
+                      <Image
+                        src={images.shirt_small}
+                        alt="Single_Product_Small_Images"
+                        width={61}
+                        height={81}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

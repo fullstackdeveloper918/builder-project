@@ -578,7 +578,6 @@
   line-height: normal;
 }
 
-
 .cart_left_swift {
   width: 100%;
   margin-bottom: 2.3rem;
@@ -600,13 +599,18 @@
   align-items: center;
 }
 
-.cart_left_swift_content > input[type=checkbox] {
+.cart_left_swift_content > input[type="checkbox"] {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   border-radius: 5px;
-  accent-color: #A2D061;
+  accent-color: #a2d061;
   color: #fff;
   border: 1px solid #cacaca;
   background: rgba(202, 202, 202, 0.12);
+}
+
+.sticky_sec {
+  position: sticky;
+  top: 116px;
 }

@@ -20,19 +20,26 @@ const page = () => {
     loadQuery();
   }, []);
 
-
-
-
   return (
     <>
-    {loading ?  <div> <Loaders /></div> : 
-     <section className={`container ${activeFilter ? "category-section" : ""}`}>
-     <Filter activeFilter={activeFilter} setActiveFilter={setActiveFilter}/>
-     <Products response={response} loading={loading} error={error} />
-     {/* <Pagination /> */}
-   </section>
-    }
-     
+      {loading ? (
+        <div>
+          {" "}
+          <Loaders />
+        </div>
+      ) : (
+        <section
+          className={`container ${activeFilter ? "category-section" : ""}`}
+          style={{ overflow: "hidden" }}
+        >
+          <Filter
+            activeFilter={activeFilter}
+            setActiveFilter={setActiveFilter}
+          />
+          <Products response={response} loading={loading} error={error} />
+          {/* <Pagination /> */}
+        </section>
+      )}
     </>
   );
 };
