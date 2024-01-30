@@ -10,13 +10,19 @@ import Dot from "./../custom-colored-dot/Dot";
 import { useRouter } from "next/navigation";
 import Loaders from "../../components/loaders/Loaders";
 import ProductCard from "../ProductCard/ProductCard";
+import { useSelector } from "react-redux";
 
 const Products = ({ response, error, loading }) => {
   const router = useRouter();
+  const inputPrice = useSelector((state) => state.filter.Price);
+
+  const filterProducts = response?.data?.data?.filter(
+    (p) => p?.unit_price > inputPrice
+  );
 
   return (
     <>
-      <div className="collection_wrapper" style={{marginBottom: "30px"}}>
+      <div className="collection_wrapper" style={{ marginBottom: "30px" }}>
         <div className="collection_container">
           <div className="collection_Single">
             <div className="imgContent">
@@ -107,7 +113,7 @@ const Products = ({ response, error, loading }) => {
             </div>
           </div>
 
-          {response?.data?.data.map((item) => (
+          {filterProducts?.map((item) => (
             <>
               <ProductCard item={item} key={item.id} />
             </>

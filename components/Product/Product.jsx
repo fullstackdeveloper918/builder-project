@@ -81,37 +81,38 @@ const Product = ({ product, loading, error }) => {
   useEffect(() => {
     fetchPrice();
   }, [orderQuantity, product, country]);
+  console.log(product, "product?.column_1_retail_price_usd");
 
   const fetchPrice = () => {
     if (orderQuantity <= product?.column_1_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_1_retail_price_usd.replace(/[^0-9.]/g, "")
-          : product?.column_1_retail_price_cad.replace(/[^0-9.]/g, "")
+          ? product?.column_1_retail_price_usd?.replace(/[^0-9.]/g, "")
+          : product?.column_1_retail_price_cad?.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity <= product?.column_2_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_2_retail_price_usd.replace(/[^0-9.]/g, "")
-          : product?.column_2_retail_price_cad.replace(/[^0-9.]/g, "")
+          ? product?.column_2_retail_price_usd?.replace(/[^0-9.]/g, "")
+          : product?.column_2_retail_price_cad?.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity <= product?.column_3_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_3_retail_price_usd.replace(/[^0-9.]/g, "")
-          : product?.column_3_retail_price_cad.replace(/[^0-9.]/g, "")
+          ? product?.column_3_retail_price_usd?.replace(/[^0-9.]/g, "")
+          : product?.column_3_retail_price_cad?.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity <= product?.column_4_qty) {
       setPrice(
         country === "usa"
-          ? product?.column_4_retail_price_usd.replace(/[^0-9.]/g, "")
-          : product?.column_4_retail_price_cad.replace(/[^0-9.]/g, "")
+          ? product?.column_4_retail_price_usd?.replace(/[^0-9.]/g, "")
+          : product?.column_4_retail_price_cad?.replace(/[^0-9.]/g, "")
       );
     } else if (orderQuantity > product?.column_4_q) {
       setPrice(
         country === "usa"
-          ? product?.column_5_retail_price_usd.replace(/[^0-9.]/g, "")
-          : product?.column_5_retail_price_cad.replace(/[^0-9.]/g, "")
+          ? product?.column_5_retail_price_usd?.replace(/[^0-9.]/g, "")
+          : product?.column_5_retail_price_cad?.replace(/[^0-9.]/g, "")
       );
     }
   };

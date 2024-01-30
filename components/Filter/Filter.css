@@ -412,3 +412,29 @@
     margin: 0 auto;
   }
 }
+
+.filter_panel_price_input_section {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.filter_panel_price_input {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.filter_panel_textInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_panel_textInput input[type="text"] {
+  border: 1px solid black;
+  padding: 0.5rem;
+  flex: 1;
+}
+
+.filter_panel_textInput p {
+  flex: 3;
+}
